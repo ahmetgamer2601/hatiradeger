@@ -2378,7 +2378,7 @@ const heroWindow = `<svg viewBox="0 0 360 475" role="img" aria-label="Bir pencer
 let knockAudio = null;
 function playKnock(){
   try {
-    if (!knockAudio) { knockAudio = new Audio('ses.mp4'); knockAudio.preload = 'auto'; }
+    if (!knockAudio) { knockAudio = new Audio('ses.mpeg'); knockAudio.preload = 'auto'; }
     knockAudio.currentTime = 0;
     const p = knockAudio.play(); if (p && p.catch) p.catch(() => {});
   } catch {}
@@ -2395,7 +2395,7 @@ function bindDoor(root){
     g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hit(); } });
   });
 }
-document.addEventListener('pointerdown', () => { if (!knockAudio) { try { knockAudio = new Audio('ses.mp4'); knockAudio.preload = 'auto'; knockAudio.load(); } catch {} } }, {once:true});
+document.addEventListener('pointerdown', () => { if (!knockAudio) { try { knockAudio = new Audio('ses.mpeg'); knockAudio.preload = 'auto'; knockAudio.load(); } catch {} } }, {once:true});
 const doorSvg = `<svg viewBox="0 0 260 330" role="img" aria-label="Üzerinde iki tokmak olan eski bir kapı">
   <path d="M20 322V130a110 110 0 0 1 220 0v192z" fill="#FBF9F4"/>
   <path d="M34 322V130a96 96 0 0 1 192 0v192z" fill="#2A44A0"/>
