@@ -692,6 +692,34 @@ html.no-motion *,html.no-motion *::before,html.no-motion *::after{animation:none
 html.no-motion .rv{opacity:1!important;transform:none!important}
 html.no-motion{scroll-behavior:auto}
 @media(max-width:640px){.kpis .wrap{gap:8px}.kpi span{font-size:.85rem}.pn{grid-template-columns:1fr}.pn a:last-child{text-align:left!important}}
+
+/* ---- mobil duzeltmeleri ---- */
+.ft-m{display:none}
+@media (max-width:720px){.ft-m{display:inline-flex}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-x:clip}
+h1,h2,h3,h4,p,li,a,button,label,.card,.panel,dd,dt,td,th,blockquote{overflow-wrap:anywhere;hyphens:auto}
+.grid>*,.plist>*,.hero-grid>*,.detail-head>*,.daily>*,.foot-grid>*,.head-inner>*,.tools>*{min-width:0}
+.brand img{aspect-ratio:auto;max-width:100%}
+.site-head{min-height:60px}
+@media (max-width:720px){
+  .prose p:first-child::first-letter{float:none;font-size:inherit;line-height:inherit;margin:0;color:inherit;font-family:inherit;font-weight:inherit}
+  .head-inner{flex-wrap:nowrap;gap:6px;padding:6px 12px}
+  .brand{flex:1 1 auto;min-width:0;margin-right:0}
+  .brand img{height:40px;max-width:100%;object-fit:contain;object-position:left center}
+  .tools{flex:none;gap:5px}
+  .icon-btn{height:40px;min-width:40px;padding:0 8px}
+  #contrastBtn,#helpBtn{display:none}
+  #nav{flex-basis:100%}
+  .head-inner{flex-wrap:wrap}
+  .brand{flex-basis:0}
+  .btn{max-width:100%;white-space:normal;text-align:center}
+}
+@media (max-width:380px){
+  .brand img{height:34px}
+  .icon-btn{min-width:36px;height:36px;padding:0 6px}
+  .tools{gap:3px}
+}
 </style>
 </head>
 <body>
@@ -739,7 +767,7 @@ html.no-motion{scroll-behavior:auto}
 
 <header class="site-head" id="head">
   <div class="head-inner">
-    <a class="brand" href="#/" id="brand" aria-label="Hatıra Değer ana sayfa"><img src="logo.png" alt="Hatıra Değer" id="brandLogo"></a>
+    <a class="brand" href="#/" id="brand" aria-label="Hatıra Değer ana sayfa"><img src="logo.png" alt="Hatıra Değer" id="brandLogo" width="180" height="60"></a>
     <nav id="nav" aria-label="Ana menü"></nav>
     <div class="tools">
       <div class="bellwrap" id="bellArea"></div>
@@ -1975,7 +2003,7 @@ const firebaseConfig = {
   appId: "1:298253292804:web:7b18216857b9555a632c51"
 };
 // ImgBB anahtarını buraya yaz (https://api.imgbb.com/). Boşsa görsel bağlantısı elle girilir.
-const IMGBB_KEY = "d3016a031ab664250ff11baffddf6eb4";
+const IMGBB_KEY = "";
 // Firebase App Check için reCAPTCHA v3 site anahtarı (konsol: App Check). Boşsa kapalı.
 const APPCHECK_KEY = "";
 // Anahtar türü: "v3" (klasik reCAPTCHA v3) ya da "enterprise" (reCAPTCHA Enterprise).
@@ -4134,6 +4162,9 @@ function syncFootTools(){
   };
   document.getElementById('ftMotion').onclick = () => { try { localStorage.setItem('hd-nomotion', NOMOTION ? '0' : '1'); } catch {} location.reload(); };
   document.getElementById('ftRand').onclick = randomSymbol;
+  box.insertAdjacentHTML('beforeend', '<button type="button" class="ftbtn ft-m" id="ftContrast">Yüksek kontrast</button><button type="button" class="ftbtn ft-m" id="ftHelp">Site nasıl çalışır?</button>');
+  document.getElementById('ftContrast').onclick = () => document.getElementById('contrastBtn').click();
+  document.getElementById('ftHelp').onclick = () => document.getElementById('helpBtn').click();
 }
 
 /* "/" tuşu aramaya götürür */
