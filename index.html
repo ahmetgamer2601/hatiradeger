@@ -720,6 +720,96 @@ h1,h2,h3,h4,p,li,a,button,label,.card,.panel,dd,dt,td,th,blockquote{overflow-wra
   .icon-btn{min-width:36px;height:36px;padding:0 6px}
   .tools{gap:3px}
 }
+
+/* ---- canli yarisma ---- */
+.livebar{position:sticky;top:0;z-index:40;background:var(--night);color:#fff}
+.livebar a{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:nowrap;padding:8px 14px;color:#fff;text-decoration:none;font-weight:600}
+.livebar strong{letter-spacing:.06em;text-transform:uppercase;font-size:.9rem;color:#F1B93C}
+.livebar .lbt{opacity:.95;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.livebar strong,.livebar em{white-space:nowrap;flex:none}
+.livebar em{font-style:normal;font-weight:800;background:#F1B93C;color:var(--night);border-radius:999px;padding:.15em .9em}
+.ldot{width:11px;height:11px;border-radius:50%;background:#9aa4d6;flex:none}
+.ldot.on{background:#ff5a4a;box-shadow:0 0 0 0 rgba(255,90,74,.7);animation:ldp 1.6s infinite}
+@keyframes ldp{70%{box-shadow:0 0 0 11px rgba(255,90,74,0)}100%{box-shadow:0 0 0 0 rgba(255,90,74,0)}}
+.live{padding-top:36px;padding-bottom:90px}
+.live h1{font-size:clamp(2rem,5vw,3rem);margin:.1em 0 .3em}
+.lv-k{font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-size:.9rem;margin:0}
+.lv-big{font-family:var(--display);font-size:clamp(1.6rem,4vw,2.3rem);color:var(--cobalt);margin:.2em 0 .6em}
+.lv-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:22px 26px;margin:22px 0}
+.lv-card.ok{border-color:var(--turq-d);background:var(--turq-soft)}
+.lv-card h2{font-size:1.5rem;margin:0 0 .25em}.lv-card p{margin:0;font-size:1.1rem}
+.lv-wait{display:flex;gap:10px;justify-content:center;margin:34px 0}
+.lv-wait i{width:14px;height:14px;border-radius:50%;background:var(--cobalt);animation:lvw 1.2s infinite ease-in-out}
+.lv-wait i:nth-child(2){animation-delay:.2s}.lv-wait i:nth-child(3){animation-delay:.4s}
+@keyframes lvw{0%,80%,100%{transform:scale(.5);opacity:.4}40%{transform:scale(1);opacity:1}}
+.lv-top{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:1.1rem;color:var(--muted)}
+.lv-time{font-family:var(--display);font-size:2.2rem;color:var(--red);min-width:2ch;text-align:right}
+.lv-bar{height:10px;border-radius:999px;background:var(--tile);overflow:hidden;margin:8px 0 22px}
+.lv-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--turq-d),#F1B93C 70%,var(--red));transition:width .25s linear}
+.lv-q{font-size:clamp(1.6rem,4.4vw,2.5rem)!important;line-height:1.25;white-space:pre-line}
+.lv-opts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0}
+.lv-opt{display:flex;align-items:center;gap:14px;min-height:92px;padding:14px 18px;border-radius:18px;border:0;background:var(--oc);color:#fff;font:inherit;font-weight:800;font-size:clamp(1.05rem,2.8vw,1.35rem);text-align:left;cursor:pointer;transition:transform .15s,opacity .2s,box-shadow .2s;box-shadow:0 8px 0 -3px rgba(0,0,0,.28)}
+.lv-opt:not([disabled]):hover{transform:translateY(-2px)}
+.lv-opt:not([disabled]):active{transform:translateY(3px);box-shadow:0 3px 0 -3px rgba(0,0,0,.28)}
+.lv-opt[disabled]{cursor:default;opacity:.55}
+.lv-opt.pick{opacity:1;outline:5px solid #F1B93C;outline-offset:2px}
+.lv-opt .sh{font-size:1.7rem;line-height:1;flex:none;width:1.6em;text-align:center}
+.lv-opt .tx{flex:1;min-width:0;overflow-wrap:anywhere}
+.lv-opts.rev .lv-opt{flex-wrap:wrap;cursor:default}
+.lv-opt.dim{opacity:.4}.lv-opt.right{opacity:1;outline:5px solid #fff;box-shadow:0 0 0 8px #1F7A52}
+.lv-opt.wrong{opacity:.75;text-decoration:line-through}
+.lv-opt .tick{display:block;font-size:.95rem}
+.lv-opt .cnt{flex-basis:100%;display:flex;align-items:center;gap:10px}
+.lv-opt .cnt i{display:block;height:8px;border-radius:99px;background:rgba(255,255,255,.85);min-width:3px}
+.lv-opt .cnt em{font-style:normal;font-size:.95rem}
+.lv-status{min-height:1.6em;font-weight:700;font-size:1.15rem;color:var(--cobalt)}
+.lv-h2{font-size:1.5rem;margin:30px 0 10px}
+.lv-board{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.lv-board li{display:flex;align-items:center;gap:14px;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 16px;font-size:1.1rem}
+.lv-board li.me{border-color:var(--cobalt);background:#EEF1FB}
+.lv-board .r{font-family:var(--display);font-weight:700;color:var(--cobalt);min-width:1.6em}
+.lv-board .n{flex:1;min-width:0;font-weight:700}
+.lv-pod{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:12px;align-items:end;margin:26px 0}
+.lv-pod div{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:18px 10px;text-align:center}
+.lv-pod .p1{background:linear-gradient(#FFF3C4,#fff);border-color:#E0B03A;padding-top:30px;padding-bottom:30px}
+.lv-pod .m{display:block;font-family:var(--display);font-size:2rem;color:var(--cobalt)}
+.lv-pod strong{display:block;overflow-wrap:anywhere}.lv-pod b{color:var(--red)}
+.qlist{display:grid;gap:12px}
+.qrow{display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;border:1.5px solid var(--line);border-radius:16px;padding:14px 18px}
+.qrow strong{display:block;font-size:1.15rem}.qrow span{color:var(--muted)}
+.qrow .acts,.qm .acts{display:flex;gap:8px;flex-wrap:wrap}
+.qq{border:1.5px solid var(--line);border-radius:16px;padding:16px 18px;margin:0 0 16px;min-width:0}
+.qq legend{font-weight:800;padding:0 8px}.qq legend small{color:var(--red);font-weight:700;margin-left:6px}
+.qo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.qoi{display:flex;align-items:center;gap:8px;border-left:6px solid var(--oc);background:var(--tile);border-radius:10px;padding:6px 10px}
+.qoi input[type=text]{flex:1;min-width:0;border:0;background:transparent;font:inherit;padding:.4em 0}
+.qoi .sh{color:var(--oc);font-size:1.1rem}
+.qoi input[type=radio],.chk input,.hostc input[type=checkbox]{width:1.35em;height:1.35em;flex:none;margin:0;padding:0;accent-color:var(--oc,var(--cobalt))}
+.qoi input[type=text]{width:auto}
+#qGenN{width:auto;display:inline-block}
+.qm select{width:auto;display:inline-block}
+.qm{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.hostc .hs{font-weight:800;color:var(--muted)}.hostc .hq{font-size:1.5rem;white-space:pre-line;margin:.2em 0 .6em}
+.hostc .hb{font-size:1.2rem;margin:12px 0}.hostc .hb b{font-family:var(--display);font-size:1.8rem;color:var(--cobalt)}
+.hopts{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hopts li{background:var(--oc);color:#fff;border-radius:12px;padding:12px 14px;font-weight:700;display:flex;gap:10px}
+.chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.chips li{background:var(--tile);border-radius:999px;padding:.3em .9em;font-weight:700}
+.chk{display:flex;gap:10px;align-items:center;margin:10px 0}
+@media(max-width:560px){.lv-opts,.qo,.hopts{grid-template-columns:1fr}.lv-opt{min-height:78px}.lv-pod{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.ldot.on,.lv-wait i{animation:none}}
+
+#nav a{white-space:nowrap}
+@media (min-width:721px) and (max-width:1180px){
+  .head-inner{flex-wrap:wrap}
+  #menuBtn{display:inline-flex}
+  #nav{display:none;order:10;width:100%;flex-direction:row;flex-wrap:wrap;padding:4px 0 10px}
+  #nav.open{display:flex}
+}
+
+.tools,.tools *{white-space:nowrap}
+.tools{flex:none}
+@media (min-width:1181px){.head-inner{max-width:1320px}#nav a{padding:.5em .75em}}
 </style>
 </head>
 <body>
@@ -780,6 +870,7 @@ h1,h2,h3,h4,p,li,a,button,label,.card,.panel,dd,dt,td,th,blockquote{overflow-wra
   </div>
 </header>
 
+<div id="livebar" class="livebar" role="status" aria-live="polite" hidden></div>
 <main id="app" tabindex="-1"><div class="loading-page">Yükleniyor…</div></main>
 <noscript><p style="padding:40px;text-align:center">Bu sitenin çalışması için JavaScript gerekiyor.</p></noscript>
 
@@ -1991,7 +2082,7 @@ window.HDQR={make:function(text){for(var t=2;t<=20;t++){try{var q=new QRCode(t,E
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, deleteUser, sendEmailVerification, updateProfile, sendPasswordResetEmail, GoogleAuthProvider, OAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-import { getFirestore, collection, doc, getDoc, getDocs, setDoc, addDoc, updateDoc, deleteDoc, query, where, orderBy, limit, serverTimestamp, getCountFromServer, Timestamp, increment } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import { getFirestore, collection, doc, getDoc, getDocs, setDoc, addDoc, updateDoc, deleteDoc, query, where, orderBy, limit, serverTimestamp, getCountFromServer, Timestamp, increment, onSnapshot } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 /* ================= AYARLAR ================= */
 const firebaseConfig = {
@@ -2266,7 +2357,7 @@ applyContrast();
 const roleLabel = () => isAdmin ? ['Yönetici','admin'] : isMember ? ['Yetkili üye','member'] : user ? ['Üye',''] : ['Ziyaretçi',''];
 
 function renderNav(){
-  $('#nav').innerHTML = `<a href="#/" data-p="">Semboller</a><a href="#/topluluk" data-p="topluluk">Topluluk</a><a href="#/mahalle" data-p="mahalle">Mahalle</a><a href="#/hakkinda" data-p="hakkinda">Hakkında</a>` + (isAdmin ? '<a href="#/yonetim" data-p="yonetim">Yönetim</a>' : '');
+  $('#nav').innerHTML = `<a href="#/" data-p="">Semboller</a><a href="#/yarisma" data-p="yarisma">Yarışma</a><a href="#/topluluk" data-p="topluluk">Topluluk</a><a href="#/mahalle" data-p="mahalle">Mahalle</a><a href="#/hakkinda" data-p="hakkinda">Hakkında</a>` + (isAdmin ? '<a href="#/yonetim" data-p="yonetim">Yönetim</a>' : '');
   const area = $('#userArea');
   if (!user) { area.innerHTML = '<a class="btn btn-sm" href="#/giris">Giriş yap</a>'; return; }
   const name = user.displayName || user.email || 'Üye', [rl, rc] = roleLabel();
@@ -2286,7 +2377,7 @@ function renderNav(){
 document.addEventListener('click', e => { const m = $('#umenu'); if (m && !m.hidden && !e.target.closest('.usermenu')) { m.hidden = true; $('#umBtn').setAttribute('aria-expanded','false'); } });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { const m = $('#umenu'); if (m) m.hidden = true; } });
 function markNav(page){
-  const map = {topluluk:'topluluk', oneri:'topluluk', mahalle:'mahalle', kit:'mahalle', okul:'mahalle', test:'', siralama:'topluluk', hakkinda:'hakkinda', yonetim:'yonetim'};
+  const map = {yarisma:'yarisma', topluluk:'topluluk', oneri:'topluluk', mahalle:'mahalle', kit:'mahalle', okul:'mahalle', test:'', siralama:'topluluk', hakkinda:'hakkinda', yonetim:'yonetim'};
   const cur = page === '' ? '' : map[page];
   $$('#nav a').forEach(a => { if (cur !== undefined && a.dataset.p === cur) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
   $('#nav').classList.remove('open'); $('#menuBtn').innerHTML = I.menu; $('#menuBtn').setAttribute('aria-expanded','false');
@@ -2406,7 +2497,7 @@ const heroWindow = `<svg viewBox="0 0 360 475" role="img" aria-label="Bir pencer
 let knockAudio = null;
 function playKnock(){
   try {
-    if (!knockAudio) { knockAudio = new Audio('ses.mpeg'); knockAudio.preload = 'auto'; }
+    if (!knockAudio) { knockAudio = new Audio('ses.mp4'); knockAudio.preload = 'auto'; }
     knockAudio.currentTime = 0;
     const p = knockAudio.play(); if (p && p.catch) p.catch(() => {});
   } catch {}
@@ -2423,7 +2514,7 @@ function bindDoor(root){
     g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hit(); } });
   });
 }
-document.addEventListener('pointerdown', () => { if (!knockAudio) { try { knockAudio = new Audio('ses.mpeg'); knockAudio.preload = 'auto'; knockAudio.load(); } catch {} } }, {once:true});
+document.addEventListener('pointerdown', () => { if (!knockAudio) { try { knockAudio = new Audio('ses.mp4'); knockAudio.preload = 'auto'; knockAudio.load(); } catch {} } }, {once:true});
 const doorSvg = `<svg viewBox="0 0 260 330" role="img" aria-label="Üzerinde iki tokmak olan eski bir kapı">
   <path d="M20 322V130a110 110 0 0 1 220 0v192z" fill="#FBF9F4"/>
   <path d="M34 322V130a96 96 0 0 1 192 0v192z" fill="#2A44A0"/>
@@ -3777,7 +3868,7 @@ const SEED = [
     description:'Anlatıldığına göre eski kapılarda iki ayrı tokmak bulunurdu. Biri kalın ve tok, diğeri ince ve tiz bir ses çıkarırdı.\n\nTok sesli tokmak çalınırsa gelenin erkek, tiz sesli tokmak çalınırsa gelenin kadın olduğu anlaşılırdı. Böylece evdekiler kapıyı açmadan önce hazırlık yapabilir, kapıyı kimin karşılaması gerektiğini hemen bilirdi.',
     howToday:'Kapı zili yerine iki farklı tonda zil ya da tokmak kullanarak, gelenin kim olduğunu önceden belli eden küçük bir işaret geliştirebilirsiniz.' }
 ];
-const ADMIN_TABS = [['panel','Genel bakış'],['kartlar','Kartlar'],['oneriler','Öneriler'],['gonderimler','Gönderimler'],['uyeler','Üyeler'],['bildirilenler','Bildirilenler'],['kisitlamalar','Kısıtlamalar']];
+const ADMIN_TABS = [['panel','Genel bakış'],['kartlar','Kartlar'],['oneriler','Öneriler'],['gonderimler','Gönderimler'],['yarisma','Yarışma'],['uyeler','Üyeler'],['bildirilenler','Bildirilenler'],['kisitlamalar','Kısıtlamalar']];
 
 async function pageAdmin(tab, t){
   document.title = 'Yönetim · Hatıra Değer';
@@ -3793,6 +3884,7 @@ async function pageAdmin(tab, t){
   else if (tab === 'kartlar') adminCards(box, t);
   else if (tab === 'oneriler') adminProposals(box, t);
   else if (tab === 'gonderimler') adminSubmissions(box, t);
+  else if (tab === 'yarisma') adminLive(box, t);
   else if (tab === 'bildirilenler') adminReports(box, t);
   else if (tab === 'kisitlamalar') adminRestrictions(box, t);
   else adminMembers(box, t);
@@ -4239,6 +4331,376 @@ let enhT = 0;
 new MutationObserver(() => { clearTimeout(enhT); enhT = setTimeout(() => { enhanceHome(); enhanceCard(); syncFootTools(); }, 120); }).observe(document.getElementById('app'), {childList:true});
 syncFootTools();
 
+/* ================= CANLI YARIŞMA ================= */
+const LCOL = ['#BE3A2C','#22388C','#8A6410','#17706E'], LSH = ['▲','◆','●','■'], LSECS = [10,15,20,30,45,60];
+let liveNow;            // undefined: henüz bilinmiyor, null: yok
+let liveCleanup = null;
+let hostStop = null;
+const runLiveCleanup = () => { if (hostStop) { try { hostStop(); } catch {} hostStop = null; } if (liveCleanup) { try { liveCleanup(); } catch {} liveCleanup = null; } };
+const fmtN = n => Number(n || 0).toLocaleString('tr-TR');
+
+function paintLiveBar(){
+  const b = $('#livebar'); if (!b) return;
+  const L = liveNow;
+  if (!L || !['live','announce'].includes(L.mode)) { b.hidden = true; b.innerHTML = ''; return; }
+  const live = L.mode === 'live';
+  b.hidden = false;
+  b.innerHTML = `<a href="#/yarisma"><span class="ldot${live ? ' on' : ''}" aria-hidden="true"></span><strong>${live ? 'Canlı yarışma' : 'Yaklaşan yarışma'}</strong><span class="lbt">${esc(L.title || '')}${L.text ? ' · ' + esc(L.text) : ''}</span><em>${live ? 'Katıl' : 'Ayrıntı'} ›</em></a>`;
+}
+try {
+  onSnapshot(doc(db,'live','now'), s => { liveNow = s.exists() ? s.data() : null; paintLiveBar(); window.dispatchEvent(new Event('livechange')); },
+    e => { console.warn(e); liveNow = null; window.dispatchEvent(new Event('livechange')); });
+} catch (e) { console.warn(e); liveNow = null; }
+
+const rankOf = (scores, uid) => {
+  const me = scores && scores[uid]; if (!me) return 0;
+  return 1 + Object.values(scores).filter(v => v[0] > me[0]).length;
+};
+const nameBad = n => !user ? false : (!isAdmin && /(yönetici|admin|moderatör|hatıra değer)/i.test(String(n).replace(/İ/g,'i').toLocaleLowerCase('tr')));
+
+/* ---------- Oyuncu ekranı ---------- */
+function pageLive(t){
+  runLiveCleanup();
+  document.title = 'Canlı yarışma · Hatıra Değer';
+  app.innerHTML = '<div class="wrap narrow live"><div id="lv" aria-live="polite"></div></div>';
+  const box = $('#lv');
+  let sid = '', sess = null, unS = null, joined = false, jname = '', mine = null, seen = -9, rcv = 0, fromRefresh = false, snaps = 0, tm = null, busy = false;
+  const stopS = () => { if (unS) { unS(); unS = null; } };
+  const cleanup = () => { stopS(); clearInterval(tm); window.removeEventListener('livechange', onLive); };
+  liveCleanup = cleanup;
+
+  const remain = () => {
+    const c = sess && sess.cur; if (!c) return 0;
+    let r = c.s - (Date.now() - rcv) / 1000;
+    if (fromRefresh && sess.qStart) { const e = (Date.now() - tsMs(sess.qStart)) / 1000; if (e > -2 && e < c.s + 3) r = c.s - e; }
+    return r;
+  };
+  const head = (kicker, title) => `<p class="lv-k">${kicker}</p><h1>${title}</h1>`;
+  const board = (top, isMe) => `<ol class="lv-board">${(top || []).map((p, i) => `<li class="${isMe && isMe(p) ? 'me' : ''}"><span class="r">${i + 1}</span><span class="n">${esc(p.n)}</span><b>${fmtN(p.s)}</b></li>`).join('')}</ol>`;
+
+  const meMatch = p => joined && p.n === jname && sess && sess.scores && sess.scores[user.uid] && sess.scores[user.uid][0] === p.s;
+  function draw(){
+    if (t !== token) return cleanup();
+    const L = liveNow;
+    if (L === undefined) { box.innerHTML = '<div class="loading-page">Yükleniyor…</div>'; return; }
+    if (!L || !L.mode) {
+      box.innerHTML = `${head('Canlı yarışma', 'Şu an açık bir yarışma yok')}
+        <p class="lead">Yönetici bir yarışma başlattığında bu sayfada ve sitenin en üstünde duyurulur. Telefonundan katılır, sembolleri ne kadar bildiğini herkesle birlikte denersin.</p>
+        <div class="actions"><a class="btn" href="#/test">Tek başına bilgini sına</a><a class="btn btn-line dark" href="#/">Sembolleri keşfet</a></div>`;
+      return;
+    }
+    if (L.mode === 'announce') {
+      box.innerHTML = `${head('Yaklaşan yarışma', esc(L.title || 'Canlı yarışma'))}
+        ${L.text ? `<p class="lv-big">${esc(L.text)}</p>` : ''}
+        <p class="lead">Bu sayfayı açık bırakırsan yarışma başladığında ekran kendiliğinden değişir. Katılmak için hesabınla giriş yapmış olman yeterli.</p>
+        <div class="actions"><a class="btn" href="#/">Sembolleri keşfet</a>${user ? '' : '<a class="btn btn-line dark" href="#/giris">Giriş yap</a>'}</div>`;
+      return;
+    }
+    if (!sess) { box.innerHTML = '<div class="loading-page">Yarışma yükleniyor…</div>'; return; }
+    const ph = sess.phase;
+    if (ph === 'lobby') return drawLobby();
+    if (ph === 'question') return drawQuestion();
+    if (ph === 'reveal') return drawReveal();
+    return drawFinal();
+  }
+
+  function joinBlock(){
+    if (!user) return `<div class="lv-card"><h2>Katılmak için giriş yap</h2><p>Puanın adınla listede görünür.</p><div class="actions"><button class="btn" id="lvLogin" type="button">Giriş yap</button></div></div>`;
+    if (joined) return `<div class="lv-card ok"><h2>Hazırsın, ${esc(jname)}</h2><p>Yönetici başlatınca soru ekranda kendiliğinden belirir. Sayfayı kapatma.</p></div>`;
+    return `<form class="lv-card" id="lvJoin"><h2>Adınla katıl</h2><div class="field"><label for="lvName">Listede görünecek ad</label><input id="lvName" type="text" maxlength="24" minlength="2" required value="${esc(clean(user.displayName || '').slice(0, 24))}" autocomplete="nickname"></div><button class="btn" type="submit">Yarışmaya katıl</button></form>`;
+  }
+  function bindJoin(){
+    const lg = $('#lvLogin'); if (lg) lg.onclick = () => requireLogin('Yarışmaya katılmak için önce giriş yapmalısın.');
+    const f = $('#lvJoin'); if (!f) return;
+    f.onsubmit = async e => {
+      e.preventDefault(); if (busy) return;
+      const n = clean($('#lvName').value).slice(0, 24);
+      if (n.length < 2) return toast('Ad en az 2 harf olmalı.', 'err');
+      if (nameBad(n)) return toast('Bu ad kullanılamaz. Başka bir ad dene.', 'err');
+      busy = true; f.querySelector('button').disabled = true;
+      try { await setDoc(doc(db,'sessions',sid,'players',user.uid), {name:n, at:serverTimestamp()}); joined = true; jname = n; toast('Katıldın.'); }
+      catch (er) { console.error(er); toast(er.code === 'permission-denied' ? 'Katılamadın. Yarışma kapanmış ya da hesabın kısıtlı olabilir.' : fbErr(er), 'err'); }
+      busy = false; draw();
+    };
+  }
+  function drawLobby(){
+    box.innerHTML = `${head('Canlı yarışma', esc(sess.title || 'Yarışma'))}<p class="lead">${sess.n || ''} soru hazır. Yarışma birazdan başlıyor.</p>${joinBlock()}<div class="lv-wait" aria-hidden="true"><i></i><i></i><i></i></div>`;
+    bindJoin();
+  }
+  function drawQuestion(){
+    const c = sess.cur; if (!c) return;
+    const answered = mine && mine.i === c.i, rem = remain(), over = rem <= 0;
+    const can = joined && !answered && !over;
+    box.innerHTML = `<div class="lv-top"><span>Soru ${c.i + 1} / ${sess.n}</span><span id="tt" class="lv-time" role="timer" aria-live="off">${Math.max(0, Math.ceil(rem))}</span></div>
+      <div class="lv-bar" aria-hidden="true"><i id="tb" style="width:${clamp01(rem / c.s) * 100}%"></i></div>
+      <h1 class="lv-q">${esc(c.q)}</h1>
+      <div class="lv-opts">${c.o.map((o, i) => `<button type="button" class="lv-opt${answered && mine.c === i ? ' pick' : ''}" data-i="${i}" style="--oc:${LCOL[i]}" ${can ? '' : 'disabled'}><span class="sh" aria-hidden="true">${LSH[i]}</span><span class="tx">${esc(o)}</span></button>`).join('')}</div>
+      <p class="lv-status" aria-live="polite">${!user ? 'Cevap vermek için giriş yapmalısın.' : !joined ? 'Cevap vermek için önce yarışmaya katıl.' : answered ? 'Cevabın alındı. Diğerleri bekleniyor…' : over ? 'Süre doldu.' : ''}</p>
+      ${!joined ? joinBlock() : ''}`;
+    bindJoin();
+    box.querySelectorAll('.lv-opt').forEach(b => b.onclick = () => answer(+b.dataset.i));
+  }
+  const clamp01 = x => Math.min(1, Math.max(0, x));
+  async function answer(ci){
+    const c = sess && sess.cur; if (!c || !joined || busy || (mine && mine.i === c.i) || remain() <= 0) return;
+    mine = {i:c.i, c:ci}; drawQuestion();
+    try { await setDoc(doc(db,'sessions',sid,'answers',user.uid + '_' + c.i), {q:c.i, c:ci, at:serverTimestamp()}); }
+    catch (er) { console.error(er); if (er.code === 'permission-denied') { toast('Cevap geç kaldı, kabul edilmedi.', 'err'); } else toast(fbErr(er), 'err'); }
+  }
+  function drawReveal(){
+    const r = sess.rev || {}, c = sess.cur || {o:[], q:''}, me = user && sess.scores && sess.scores[user.uid];
+    const answered = mine && mine.i === r.i;
+    const ok = answered && mine.c === r.a, gain = me ? me[1] : 0, total = me ? me[0] : 0, rk = user ? rankOf(sess.scores, user.uid) : 0;
+    const dist = r.d || [0,0,0,0], mx = Math.max(1, ...dist);
+    box.innerHTML = `<div class="lv-top"><span>Soru ${(r.i ?? 0) + 1} / ${sess.n}</span><span></span></div>
+      <h1 class="lv-q">${esc(c.q)}</h1>
+      <div class="lv-opts rev">${c.o.map((o, i) => `<div class="lv-opt ${i === r.a ? 'right' : 'dim'}${answered && mine.c === i && i !== r.a ? ' wrong' : ''}" style="--oc:${LCOL[i]}"><span class="sh" aria-hidden="true">${LSH[i]}</span><span class="tx">${esc(o)}${i === r.a ? ' <b class="tick">✓ Doğru cevap</b>' : ''}</span><span class="cnt" aria-label="${dist[i]} kişi"><i style="width:${dist[i] / mx * 100}%"></i><em>${dist[i]}</em></span></div>`).join('')}</div>
+      ${joined ? `<div class="lv-card ${ok ? 'ok' : ''}"><h2>${!answered ? 'Cevap vermedin' : ok ? 'Doğru!' : 'Bu sefer olmadı'}</h2><p>${ok ? `+${fmtN(gain)} puan` : 'Puan yok'} · Toplam <b>${fmtN(total)}</b>${rk ? ` · Sıran <b>${rk}.</b>` : ''}</p></div>` : ''}
+      <h2 class="lv-h2">İlk beşte olanlar</h2>${board((sess.top || []).slice(0, 5), meMatch)}`;
+  }
+  function drawFinal(){
+    const top = sess.top || [], rk = user ? rankOf(sess.scores, user.uid) : 0, me = user && sess.scores && sess.scores[user.uid];
+    const pod = top.slice(0, 3);
+    box.innerHTML = `${head('Yarışma bitti', esc(sess.title || 'Sonuçlar'))}
+      ${me ? `<div class="lv-card ok"><h2>${rk}. oldun</h2><p>Toplam <b>${fmtN(me[0])}</b> puan. Katıldığın için teşekkürler.</p></div>` : '<p class="lead">Katılan herkese teşekkürler.</p>'}
+      ${pod.length ? `<div class="lv-pod">${[1, 0, 2].filter(i => pod[i]).map(i => `<div class="p${i + 1}"><span class="m">${i + 1}</span><strong>${esc(pod[i].n)}</strong><b>${fmtN(pod[i].s)}</b></div>`).join('')}</div>` : ''}
+      <h2 class="lv-h2">Sıralama</h2>${board(top.slice(0, 10), meMatch)}
+      <div class="actions"><a class="btn" href="#/">Sembolleri keşfet</a><a class="btn btn-line dark" href="#/test">Tek başına dene</a></div>`;
+  }
+
+  function attach(){
+    stopS(); sess = null; seen = -9; mine = null; joined = false; snaps = 0;
+    unS = onSnapshot(doc(db,'sessions',sid), s => {
+      if (t !== token) return cleanup();
+      const d = s.exists() ? s.data() : null; snaps++;
+      if (d && d.phase === 'question' && d.cur && d.cur.i !== seen) {
+        seen = d.cur.i; rcv = Date.now(); fromRefresh = snaps === 1;
+        if (mine && mine.i !== d.cur.i) mine = null;
+        if (fromRefresh && user) getDoc(doc(db,'sessions',sid,'answers',user.uid + '_' + d.cur.i)).then(a => { if (a.exists()) { mine = {i:d.cur.i, c:a.data().c}; draw(); } }).catch(() => {});
+      }
+      sess = d; draw();
+    }, e => { console.warn(e); box.innerHTML = `<div class="empty" style="display:block"><h2>Yarışmaya bağlanılamadı</h2><p>${esc(fbErr(e))}</p></div>`; });
+    if (user) getDoc(doc(db,'sessions',sid,'players',user.uid)).then(s => { if (s.exists()) { joined = true; jname = s.data().name; draw(); } }).catch(() => {});
+  }
+  function onLive(){
+    if (t !== token) return cleanup();
+    const L = liveNow;
+    if (L && ['live','done'].includes(L.mode) && L.sid) { if (L.sid !== sid) { sid = L.sid; attach(); } }
+    else { sid = ''; sess = null; stopS(); }
+    draw();
+  }
+  window.addEventListener('livechange', onLive);
+  tm = setInterval(() => {
+    if (!sess || sess.phase !== 'question' || !sess.cur) return;
+    const r = remain(), tt = $('#tt'), tb = $('#tb');
+    if (tt) tt.textContent = Math.max(0, Math.ceil(r));
+    if (tb) tb.style.width = clamp01(r / sess.cur.s) * 100 + '%';
+    if (r <= 0 && box.querySelector('.lv-opt:not([disabled])')) drawQuestion();
+  }, 250);
+  onLive();
+}
+
+/* ---------- Yönetici: yarışma sekmesi ---------- */
+const QERR = 'Her soruda soru metni, 4 farklı seçenek ve doğru cevap olmalı.';
+function genQuestions(cards, n){
+  const pub = cards.filter(c => c.status === 'published'), out = [];
+  const regs = [...new Set(pub.map(c => c.region).filter(Boolean))], cats = [...new Set(pub.map(c => c.category).filter(Boolean))];
+  const mk = (q, right, pool, extra) => {
+    const wrong = shuffle(pool.filter(x => x !== right)).slice(0, 3); if (wrong.length < 3) return null;
+    const o = shuffle([right, ...wrong]); return {q, o, a:o.indexOf(right), s:20, auto:true, ...extra};
+  };
+  const types = [
+    c => pub.length >= 4 && c.summary ? mk(`Bu açıklama hangi sembole ait?\n“${c.summary}”`, c.title, pub.map(x => x.title)) : null,
+    c => c.region ? mk(`“${c.title}” hangi bölgeyle anılır?`, c.region, REGIONS) : null,
+    c => c.category ? mk(`“${c.title}” hangi başlık altında yer alır?`, c.category, CATEGORIES) : null,
+    c => c.sourceLevel ? mk(`“${c.title}” kartının kaynak düzeyi nedir?`, c.sourceLevel, Object.keys(SOURCE_LEVELS)) : null
+  ];
+  const ord = shuffle(pub); let k = 0, guard = 0;
+  while (out.length < n && guard++ < n * 8 && ord.length) {
+    const c = ord[k % ord.length], q = types[(k + (k / ord.length | 0)) % types.length](c); k++;
+    if (q && !out.some(x => x.q === q.q)) out.push(q);
+  }
+  return out;
+}
+const blankQ = () => ({q:'', o:['','','',''], a:0, s:20});
+
+async function adminLive(box, t){
+  runLiveCleanup();
+  let quizzes = [], view = 'list', edit = null, cards = null;
+  const load = async () => { try { const s = await getDocs(collection(db,'quizzes')); quizzes = s.docs.map(d => ({id:d.id, ...d.data()})).sort((a, b) => tsMs(b.updatedAt) - tsMs(a.updatedAt)); } catch (e) { console.error(e); toast(fbErr(e), 'err'); } };
+  await load(); if (t !== token) return;
+
+  const live = () => liveNow && ['live','done'].includes(liveNow.mode) && liveNow.sid;
+  function list(){
+    box.innerHTML = `<div class="panel"><h2>Canlı yarışma</h2>
+      <p class="muted">Soruları sen hazırlarsın, yarışmayı başlattığında ziyaretçilerin ekranında ve sitenin en üstünde duyurulur. Katılanlar telefonlarından cevap verir, puanlar anlık görünür.</p>
+      ${live() ? '<div id="hostBox"></div>' : `<div class="actions"><button class="btn" id="qNew" type="button">Yeni yarışma hazırla</button></div>`}</div>
+      ${live() ? '' : `<div class="panel"><h2>Hazırladıkların</h2>${quizzes.length ? `<div class="qlist">${quizzes.map(q => `<div class="qrow"><div><strong>${esc(q.title)}</strong><span>${(q.questions || []).length} soru · ${q.status === 'ready' ? 'Hazır' : 'Taslak'}</span></div>
+        <div class="acts"><button class="btn btn-sm" data-go="${q.id}" type="button" ${q.status === 'ready' ? '' : 'disabled title="Önce hazır olarak kaydet"'}>Canlı başlat</button><button class="btn btn-sm btn-line dark" data-ann="${q.id}" type="button">Duyuru yap</button><button class="btn btn-sm btn-line dark" data-ed="${q.id}" type="button">Düzenle</button><button class="btn btn-sm btn-line dark" data-del="${q.id}" type="button">Sil</button></div></div>`).join('')}</div>` : '<p class="muted">Henüz yarışma yok. “Yeni yarışma hazırla” ile başla.</p>'}</div>`}
+      ${liveNow && liveNow.mode === 'announce' ? `<div class="panel"><h2>Yayındaki duyuru</h2><p><strong>${esc(liveNow.title || '')}</strong> ${esc(liveNow.text || '')}</p><div class="actions"><button class="btn btn-sm btn-line dark" id="annOff" type="button">Duyuruyu kaldır</button></div></div>` : ''}`;
+    const nb = $('#qNew'); if (nb) nb.onclick = () => { edit = {title:'', desc:'', status:'draft', questions:[blankQ()]}; view = 'edit'; drawEdit(); };
+    box.querySelectorAll('[data-ed]').forEach(b => b.onclick = () => { const q = quizzes.find(x => x.id === b.dataset.ed); edit = JSON.parse(JSON.stringify(q)); view = 'edit'; drawEdit(); });
+    box.querySelectorAll('[data-del]').forEach(b => b.onclick = async () => { const q = quizzes.find(x => x.id === b.dataset.del); if (!(await confirmDialog('Yarışma silinsin mi?', `“${q.title}” kalıcı olarak silinecek.`, 'Sil'))) return; try { await deleteDoc(doc(db,'quizzes',q.id)); await load(); list(); toast('Silindi.'); } catch (e) { toast(fbErr(e), 'err'); } });
+    box.querySelectorAll('[data-go]').forEach(b => b.onclick = () => startLive(quizzes.find(x => x.id === b.dataset.go)));
+    box.querySelectorAll('[data-ann]').forEach(b => b.onclick = () => announce(quizzes.find(x => x.id === b.dataset.ann)));
+    const ao = $('#annOff'); if (ao) ao.onclick = async () => { try { await deleteDoc(doc(db,'live','now')); toast('Duyuru kaldırıldı.'); } catch (e) { toast(fbErr(e), 'err'); } };
+    if (live()) hostConsole($('#hostBox'), t);
+  }
+  window.addEventListener('livechange', onLC); liveCleanup = () => window.removeEventListener('livechange', onLC);
+  let lastMode = liveNow && liveNow.mode;
+  function onLC(){ if (t !== token) return; const m = liveNow && liveNow.mode; if (view === 'list' && m !== lastMode) { lastMode = m; list(); } }
+
+  async function announce(q){
+    const v = await askDialog({title:'Yarışmayı duyur', text:'Ziyaretçiler sitenin en üstünde bu duyuruyu görür. Henüz katılamazlar.', fields:[{name:'text', label:'Ne zaman? (örn. Bu akşam 21:00)', value:'', max:80}], confirm:'Duyuruyu yayınla'});
+    if (!v || !clean(v.text)) return toast('Zamanı yaz, örn. Bu akşam 21:00.', 'err');
+    try { await setDoc(doc(db,'live','now'), {mode:'announce', title:clean(q.title).slice(0, 80), text:clean(v.text).slice(0, 80), at:serverTimestamp()}); toast('Duyuru yayında.'); list(); }
+    catch (e) { console.error(e); toast(fbErr(e), 'err'); }
+  }
+  async function startLive(q){
+    if (!(await confirmDialog('Yarışma başlasın mı?', 'Katılım hemen açılır ve sitenin üstünde “Canlı yarışma” duyurusu görünür. Oyuncular bekleme ekranına düşer; ilk soruyu sen başlatırsın.', 'Katılımı aç', false))) return;
+    const sid = 'y' + Date.now().toString(36);
+    try {
+      await setDoc(doc(db,'sessions',sid), {quizId:q.id, title:q.title, phase:'lobby', n:q.questions.length, cur:null, qStart:null, rev:null, scores:{}, top:[], createdAt:serverTimestamp(), createdBy:user.uid});
+      await setDoc(doc(db,'live','now'), {mode:'live', sid, title:q.title, text:'Hemen katıl!', at:serverTimestamp()});
+      toast('Yarışma açıldı.');
+    } catch (e) { console.error(e); toast(fbErr(e), 'err'); }
+  }
+
+  function drawEdit(){
+    const e = edit;
+    box.innerHTML = `<a class="crumb" href="#/yonetim/yarisma" id="qBack">${I.back} Yarışmalar</a>
+      <div class="panel qed"><h2>${e.id ? 'Yarışmayı düzenle' : 'Yeni yarışma'}</h2>
+        <div class="field"><label for="qt">Başlık</label><input id="qt" maxlength="80" value="${esc(e.title)}" placeholder="Örn. Cuma akşamı sembol yarışması"></div>
+        <div class="field"><label for="qd">Kısa açıklama (isteğe bağlı)</label><input id="qd" maxlength="160" value="${esc(e.desc || '')}"></div>
+        <div id="qs"></div>
+        <div class="actions"><button class="btn btn-line dark" id="qAdd" type="button">+ Soru ekle</button>
+          <select id="qGenN" aria-label="Taslak soru sayısı"><option>5</option><option selected>8</option><option>10</option><option>15</option></select>
+          <button class="btn btn-line dark" id="qGen" type="button">Kartlardan taslak üret</button></div>
+        <p class="muted" id="qNote">Taslak üretince sorular listenin sonuna eklenir; kontrol edip düzenleyebilirsin.</p>
+        <div class="actions"><button class="btn" id="qReady" type="button">Hazır olarak kaydet</button><button class="btn btn-line dark" id="qDraft" type="button">Taslak olarak kaydet</button></div></div>`;
+    $('#qBack').onclick = ev => { ev.preventDefault(); view = 'list'; list(); };
+    const qs = $('#qs');
+    const paint = () => {
+      qs.innerHTML = e.questions.map((q, i) => `<fieldset class="qq" data-i="${i}"><legend>Soru ${i + 1}${q.auto ? ' <small>otomatik taslak</small>' : ''}</legend>
+        <div class="field"><label for="q${i}">Soru metni</label><textarea id="q${i}" maxlength="240" rows="2">${esc(q.q)}</textarea></div>
+        <div class="qo">${q.o.map((o, k) => `<label class="qoi" style="--oc:${LCOL[k]}"><input type="radio" name="a${i}" value="${k}" ${q.a === k ? 'checked' : ''} aria-label="Doğru cevap: seçenek ${k + 1}"><span class="sh" aria-hidden="true">${LSH[k]}</span><input type="text" maxlength="80" data-o="${k}" value="${esc(o)}" placeholder="Seçenek ${k + 1}" aria-label="Seçenek ${k + 1}"></label>`).join('')}</div>
+        <div class="qm"><label>Süre <select data-s>${LSECS.map(s => `<option ${q.s === s ? 'selected' : ''}>${s}</option>`).join('')}</select> sn</label>
+          <span class="acts"><button type="button" class="btn btn-sm btn-line dark" data-up ${i ? '' : 'disabled'}>Yukarı</button><button type="button" class="btn btn-sm btn-line dark" data-dn ${i < e.questions.length - 1 ? '' : 'disabled'}>Aşağı</button><button type="button" class="btn btn-sm btn-line dark" data-rm>Sil</button></span></div></fieldset>`).join('');
+    };
+    const sync = () => { e.title = $('#qt').value; e.desc = $('#qd').value;
+      qs.querySelectorAll('.qq').forEach(f => { const i = +f.dataset.i, q = e.questions[i]; q.q = f.querySelector('textarea').value; q.o = [...f.querySelectorAll('[data-o]')].map(x => x.value); const r = f.querySelector('input[type=radio]:checked'); q.a = r ? +r.value : 0; q.s = +f.querySelector('[data-s]').value; }); };
+    paint();
+    qs.onclick = ev => { const b = ev.target.closest('button'); if (!b) return; const f = b.closest('.qq'); if (!f) return; sync(); const i = +f.dataset.i, a = e.questions;
+      if (b.hasAttribute('data-rm')) { if (a.length > 1) a.splice(i, 1); } else if (b.hasAttribute('data-up') && i) [a[i - 1], a[i]] = [a[i], a[i - 1]]; else if (b.hasAttribute('data-dn') && i < a.length - 1) [a[i + 1], a[i]] = [a[i], a[i + 1]]; paint(); };
+    $('#qAdd').onclick = () => { sync(); e.questions.push(blankQ()); paint(); qs.lastElementChild.querySelector('textarea').focus(); };
+    $('#qGen').onclick = async () => {
+      sync(); const n = +$('#qGenN').value, b = $('#qGen'); b.disabled = true;
+      try { if (!cards) cards = await loadCards(true); const g = genQuestions(cards, n);
+        if (!g.length) { $('#qNote').textContent = 'Taslak için yeterli yayınlanmış kart yok (en az 4 kart gerekir).'; }
+        else { if (e.questions.length === 1 && !e.questions[0].q.trim()) e.questions = []; e.questions.push(...g); paint(); $('#qNote').textContent = `${g.length} taslak soru eklendi. Mutlaka kontrol et.`; }
+      } catch (er) { console.error(er); toast(fbErr(er), 'err'); }
+      b.disabled = false;
+    };
+    const save = async ready => {
+      sync();
+      const title = clean(e.title); if (title.length < 3) return toast('Başlık en az 3 harf olmalı.', 'err');
+      const qsx = e.questions.map(q => ({q:clean(q.q).slice(0, 240), o:q.o.map(x => clean(x).slice(0, 80)), a:q.a, s:q.s}));
+      if (ready) {
+        if (!qsx.length) return toast('En az 1 soru ekle.', 'err');
+        const bad = qsx.findIndex(q => q.q.length < 3 || q.o.some(x => !x) || new Set(q.o.map(x => x.toLocaleLowerCase('tr'))).size < 4 || !(q.a >= 0 && q.a < 4));
+        if (bad >= 0) { toast(`Soru ${bad + 1}: ${QERR}`, 'err'); const f = qs.querySelectorAll('.qq')[bad]; if (f) f.scrollIntoView({block:'center'}); return; }
+      }
+      const data = {title, desc:clean(e.desc).slice(0, 160), status:ready ? 'ready' : 'draft', questions:qsx, updatedAt:serverTimestamp()};
+      try { if (e.id) await setDoc(doc(db,'quizzes',e.id), {...data, createdAt:e.createdAt || serverTimestamp(), createdBy:e.createdBy || user.uid}); else await addDoc(collection(db,'quizzes'), {...data, createdAt:serverTimestamp(), createdBy:user.uid});
+        toast(ready ? 'Yarışma hazır.' : 'Taslak kaydedildi.'); await load(); view = 'list'; list(); }
+      catch (er) { console.error(er); toast(fbErr(er), 'err'); }
+    };
+    $('#qReady').onclick = () => save(true); $('#qDraft').onclick = () => save(false);
+  }
+  list();
+}
+
+/* ---------- Yönetici: canlı yönetim konsolu ---------- */
+function hostConsole(box, t){
+  const sid = liveNow.sid; let sess = null, quiz = null, players = [], answers = [], auto = true, startedLocal = 0, busy = false, tm = null;
+  const unsubs = [];
+  const cleanup = () => { unsubs.forEach(u => { try { u(); } catch {} }); clearInterval(tm); };
+  if (hostStop) { try { hostStop(); } catch {} } hostStop = cleanup;
+  const remain = () => { if (!sess || !sess.cur) return 0; const s = startedLocal ? (Date.now() - startedLocal) / 1000 : (sess.qStart ? (Date.now() - tsMs(sess.qStart)) / 1000 : 0); return sess.cur.s - s; };
+  const cnt = i => answers.filter(a => a.q === i).length;
+
+  unsubs.push(onSnapshot(doc(db,'sessions',sid), s => { if (t !== token) return cleanup(); const d = s.exists() ? s.data() : null; if (d && d.phase !== 'question') startedLocal = 0; sess = d; draw(); }, e => console.warn(e)));
+  unsubs.push(onSnapshot(collection(db,'sessions',sid,'players'), s => { players = s.docs.map(d => ({id:d.id, ...d.data()})); draw(); }, e => console.warn(e)));
+  unsubs.push(onSnapshot(collection(db,'sessions',sid,'answers'), s => { answers = s.docs.map(d => d.data()); softCount(); }, e => console.warn(e)));
+  getDoc(doc(db,'sessions',sid)).then(async s => { if (s.exists()) { try { const q = await getDoc(doc(db,'quizzes',s.data().quizId)); quiz = q.exists() ? q.data() : null; } catch (e) { console.error(e); } draw(); } });
+
+  function softCount(){ const e = $('#hAns'); if (e && sess && sess.cur) e.textContent = `${cnt(sess.cur.i)} / ${players.length}`; else draw(); }
+  function draw(){
+    if (t !== token) return cleanup();
+    if (!sess || !quiz) { box.innerHTML = '<div class="loading-page">Konsol yükleniyor…</div>'; return; }
+    const ph = sess.phase, i = sess.cur ? sess.cur.i : -1, last = i >= sess.n - 1;
+    const names = players.map(p => `<li>${esc(p.name)}</li>`).join('');
+    let body = '';
+    if (ph === 'lobby') body = `<p class="hs">Oyuncular katılıyor. Herkes hazır olunca başlat.</p><div class="hb"><b id="hPl">${players.length}</b> kişi katıldı</div><ul class="chips">${names}</ul><div class="actions"><button class="btn" id="hStart" type="button" ${players.length ? '' : 'disabled'}>İlk soruyu başlat</button><button class="btn btn-line dark" id="hClose" type="button">İptal et</button></div>`;
+    else if (ph === 'question') { const c = sess.cur; body = `<p class="hs">Soru ${c.i + 1} / ${sess.n} · <span id="hT">${Math.max(0, Math.ceil(remain()))}</span> sn</p><h3 class="hq">${esc(c.q)}</h3><ol class="hopts">${c.o.map((o, k) => `<li style="--oc:${LCOL[k]}"><span>${LSH[k]}</span>${esc(o)}${quiz.questions[c.i] && quiz.questions[c.i].a === k ? ' <b>✓</b>' : ''}</li>`).join('')}</ol>
+      <div class="hb">Cevaplayan: <b id="hAns">${cnt(c.i)} / ${players.length}</b></div>
+      <label class="chk"><input type="checkbox" id="hAuto" ${auto ? 'checked' : ''}> Süre bitince cevabı kendiliğinden göster</label>
+      <div class="actions"><button class="btn" id="hRev" type="button">Cevabı şimdi göster</button></div>`; }
+    else if (ph === 'reveal') { const r = sess.rev || {}; body = `<p class="hs">Soru ${(r.i ?? 0) + 1} / ${sess.n} · cevap gösteriliyor</p><h3 class="hq">${esc(sess.cur.q)}</h3><p>Doğru cevap: <strong>${LSH[r.a]} ${esc(sess.cur.o[r.a])}</strong> · ${(r.d || [])[r.a] || 0} kişi bildi</p>
+      <ol class="lv-board">${(sess.top || []).slice(0, 5).map((p, k) => `<li><span class="r">${k + 1}</span><span class="n">${esc(p.n)}</span><b>${fmtN(p.s)}</b></li>`).join('')}</ol>
+      <div class="actions"><button class="btn" id="hNext" type="button">${last ? 'Sonuçları göster' : 'Sonraki soru'}</button></div>`; }
+    else body = `<p class="hs">Yarışma bitti.</p><ol class="lv-board">${(sess.top || []).slice(0, 10).map((p, k) => `<li><span class="r">${k + 1}</span><span class="n">${esc(p.n)}</span><b>${fmtN(p.s)}</b></li>`).join('')}</ol>
+      <div class="actions"><button class="btn" id="hDone" type="button">Duyuruyu kaldır ve kapat</button></div><p class="muted">Sonuçlar, duyuru kaldırılana kadar ziyaretçilere gösterilir.</p>`;
+    box.innerHTML = `<div class="panel hostc"><h2>Yönetim konsolu · ${esc(sess.title)}</h2>${body}</div>`;
+    const on = (id, f) => { const b = $('#' + id); if (b) b.onclick = f; };
+    on('hStart', () => nextQ(0)); on('hClose', closeLive); on('hRev', reveal); on('hNext', () => last ? finish() : nextQ(i + 1)); on('hDone', closeLive);
+    const ac = $('#hAuto'); if (ac) ac.onchange = () => { auto = ac.checked; };
+  }
+  async function nextQ(i){
+    if (busy) return; busy = true;
+    const q = quiz.questions[i];
+    try { startedLocal = Date.now(); await updateDoc(doc(db,'sessions',sid), {phase:'question', cur:{i, q:q.q, o:q.o, s:q.s}, qStart:serverTimestamp(), rev:null}); }
+    catch (e) { console.error(e); toast(fbErr(e), 'err'); }
+    busy = false;
+  }
+  async function reveal(){
+    if (busy) return; busy = true;
+    try {
+      const fresh = await getDoc(doc(db,'sessions',sid)); const S = fresh.data();
+      if (!S || S.phase !== 'question') { busy = false; return; }
+      const i = S.cur.i, q = quiz.questions[i], start = tsMs(S.qStart), dur = S.cur.s * 1000;
+      const [ps, as] = await Promise.all([getDocs(collection(db,'sessions',sid,'players')), getDocs(query(collection(db,'sessions',sid,'answers'), where('q','==',i)))]);
+      const nm = {}; ps.docs.forEach(d => nm[d.id] = d.data().name);
+      const byU = {}; as.docs.forEach(d => { const a = d.data(), u = d.id.slice(0, d.id.lastIndexOf('_')); byU[u] = a; });
+      const scores = {...(S.scores || {})}, d4 = [0,0,0,0];
+      Object.keys(nm).forEach(u => {
+        const a = byU[u], prev = (scores[u] || [0,0,0])[0]; let gain = 0, ok = 0;
+        if (a && a.c >= 0 && a.c < 4) { d4[a.c]++; if (a.c === q.a) { ok = 1; const el = Math.min(dur, Math.max(0, tsMs(a.at) - start)); gain = Math.round(1000 * (1 - .5 * el / dur)); } }
+        scores[u] = [prev + gain, gain, ok];
+      });
+      const top = Object.entries(scores).filter(([u]) => nm[u]).sort((a, b) => b[1][0] - a[1][0]).slice(0, 10).map(([u, v]) => ({n:nm[u], s:v[0]}));
+      await updateDoc(doc(db,'sessions',sid), {phase:'reveal', rev:{i, a:q.a, d:d4}, scores, top});
+    } catch (e) { console.error(e); toast(fbErr(e), 'err'); }
+    busy = false;
+  }
+  async function finish(){
+    if (busy) return; busy = true;
+    try { await updateDoc(doc(db,'sessions',sid), {phase:'finished', cur:null}); await setDoc(doc(db,'live','now'), {mode:'done', sid, title:sess.title, text:'Sonuçlar', at:serverTimestamp()}); }
+    catch (e) { console.error(e); toast(fbErr(e), 'err'); }
+    busy = false;
+  }
+  async function closeLive(){
+    if (sess && sess.phase !== 'finished' && !(await confirmDialog('Yarışma kapatılsın mı?', 'Yarışma yarıda kalırsa oyuncular sonuç göremez.', 'Kapat'))) return;
+    try { if (sess && sess.phase !== 'finished') await updateDoc(doc(db,'sessions',sid), {phase:'finished', cur:null}); await deleteDoc(doc(db,'live','now')); toast('Kapatıldı.'); }
+    catch (e) { console.error(e); toast(fbErr(e), 'err'); }
+  }
+  tm = setInterval(() => {
+    if (!sess || sess.phase !== 'question') return;
+    const r = remain(), e = $('#hT'); if (e) e.textContent = Math.max(0, Math.ceil(r));
+    if (auto && r <= -2.5 && !busy) reveal();
+  }, 400);
+}
+
 async function adminProposals(box, t){
   let list = [];
   try { list = await loadProposals(); } catch (e) { console.error(e); box.innerHTML = emptyBox('Öneriler yüklenemedi', 'Güvenlik kurallarının güncel olduğundan emin ol.'); return; }
@@ -4348,7 +4810,7 @@ async function adminMembers(box, t){
 
 /* ================= YÖNLENDİRME ================= */
 function route(){
-  const t = ++token;
+  const t = ++token; runLiveCleanup();
   if (location.hash === '#kartlar') return;
   const parts = (location.hash.slice(1) || '/').split('/');
   const dec = x => { try { return decodeURIComponent(x); } catch { return ''; } };
@@ -4374,6 +4836,7 @@ function route(){
   else if (page === 'buyuk') pageElder();
   else if (page === 'tanitim') pageOutreach();
   else if (page === 'siralama') pageBoard(t);
+  else if (page === 'yarisma') pageLive(t);
   else if (page === 'okul') pageSchool(arg, t);
   else if (page === 'gizlilik' || page === 'sartlar') pageLegal(page);
   else if (page === 'yonetim') pageAdmin(arg, t);
