@@ -796,7 +796,7 @@ h1,h2,h3,h4,p,li,a,button,label,.card,.panel,dd,dt,td,th,blockquote{overflow-wra
 .chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
 .chips li{background:var(--tile);border-radius:999px;padding:.3em .9em;font-weight:700}
 .chk{display:flex;gap:10px;align-items:center;margin:10px 0}
-@media(max-width:560px){.lv-opts,.qo,.hopts{grid-template-columns:1fr}.lv-opt{min-height:78px}.lv-pod{grid-template-columns:1fr}}
+@media(max-width:560px){.lv-opts,.qo,.hopts{grid-template-columns:1fr}.lv-opt{min-height:78px}.lv-pod{gap:8px}.lv-pod strong{font-size:.95rem}.lv-pod .p1 .step{height:150px}.lv-pod .p2 .step{height:110px}.lv-pod .p3 .step{height:80px}}
 @media(prefers-reduced-motion:reduce){.ldot.on,.lv-wait i{animation:none}}
 
 #nav a{white-space:nowrap}
@@ -810,6 +810,57 @@ h1,h2,h3,h4,p,li,a,button,label,.card,.panel,dd,dt,td,th,blockquote{overflow-wra
 .tools,.tools *{white-space:nowrap}
 .tools{flex:none}
 @media (min-width:1181px){.head-inner{max-width:1320px}#nav a{padding:.5em .75em}}
+
+/* ---- yarisma animasyonlari ---- */
+.lv-snd{position:absolute;right:20px;top:12px;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:.35em .9em;font:inherit;font-weight:700;font-size:.9rem;cursor:pointer;color:var(--ink)}
+.live{position:relative}
+.lv-ready{text-align:center;padding:60px 0 40px}
+.lv-count{font-family:var(--display);font-size:clamp(7rem,28vw,13rem);line-height:1;color:var(--red);font-weight:700}
+.lv-go{font-size:1.6rem;font-weight:800;color:var(--cobalt)}
+.pop{animation:lvpop .55s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes lvpop{0%{transform:scale(.3);opacity:0}100%{transform:scale(1);opacity:1}}
+.lv-opts.in .lv-opt{animation:lvin .5s cubic-bezier(.2,1.3,.4,1) both;animation-delay:var(--d,0s)}
+@keyframes lvin{0%{transform:translateY(34px) scale(.92);opacity:0}100%{transform:none;opacity:1}}
+.lv-q{animation:lvq .5s ease both}
+@keyframes lvq{0%{transform:translateY(-14px);opacity:0}100%{transform:none;opacity:1}}
+.lv-time.hot{animation:lvhot .5s ease-in-out infinite alternate}
+@keyframes lvhot{from{transform:scale(1)}to{transform:scale(1.28);color:#ff3b2a}}
+.lv-opts.rev .lv-opt.right{animation:lvright .7s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes lvright{0%{transform:scale(.92)}60%{transform:scale(1.04)}100%{transform:scale(1)}}
+.lv-opts.rev .lv-opt.wrong{animation:lvshake .5s ease both}
+@keyframes lvshake{0%,100%{transform:translateX(0)}20%{transform:translateX(-9px)}40%{transform:translateX(9px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+.lv-opt .cnt i{animation:lvgrow .8s ease both;transform-origin:left}
+@keyframes lvgrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.lv-card.bad{border-color:#BE3A2C;background:#FBEDEA}
+.gain{font-family:var(--display);font-size:1.5rem;color:var(--turq-d)}
+.lv-board li{animation:lvin .45s ease both}
+.lv-board li:nth-child(2){animation-delay:.08s}.lv-board li:nth-child(3){animation-delay:.16s}.lv-board li:nth-child(4){animation-delay:.24s}.lv-board li:nth-child(5){animation-delay:.32s}
+.lv-pod{align-items:end}
+.lv-pod div{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0;background:none;border:0}
+.lv-pod strong{margin-bottom:2px;font-size:1.1rem}
+.lv-pod b{margin-bottom:8px}
+.lv-pod .step{display:flex;width:100%;align-items:flex-start;justify-content:center;border-radius:14px 14px 0 0;background:linear-gradient(#22388C,#141F5E);color:#fff;padding-top:10px;transform-origin:bottom;animation:lvstep .9s cubic-bezier(.2,1.2,.4,1) both}
+.lv-pod .step .m{color:#fff;font-size:2.2rem}
+.lv-pod .p1 .step{height:190px;background:linear-gradient(#F1B93C,#B7860B);animation-delay:.5s}
+.lv-pod .p2 .step{height:140px;animation-delay:.25s}
+.lv-pod .p3 .step{height:105px;background:linear-gradient(#17706E,#0E4F4D);animation-delay:0s}
+.lv-pod .p1{background:none;border:0}
+.lv-pod .p1 strong,.lv-pod .p1 b{animation:lvq .6s ease both;animation-delay:1.2s}
+@keyframes lvstep{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.chips li{animation:lvpop .45s cubic-bezier(.2,1.6,.4,1) both}
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:90}
+.confetti i{position:absolute;top:-20px;border-radius:2px;animation:lvfall linear forwards}
+@keyframes lvfall{to{transform:translate(var(--dx),110vh) rotate(var(--rot));opacity:.9}}
+/* editor: dogru cevap */
+.qhint{margin:4px 0 8px;color:var(--muted)}
+.qoi{flex-wrap:wrap}
+.qoi.isok{background:#E6F4EC;border-left-color:#1F7A52;box-shadow:inset 0 0 0 2px #1F7A52}
+.qok{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:.3em .8em;font-weight:800;font-size:.9rem;cursor:pointer;white-space:nowrap;flex:none}
+.qok input{position:absolute;opacity:0;width:1px;height:1px}
+.qok:focus-within{outline:3px solid var(--cobalt);outline-offset:2px}
+.qoi.isok .qok{background:#1F7A52;border-color:#1F7A52;color:#fff}
+.nomotion .pop,.nomotion .lv-opts.in .lv-opt,.nomotion .lv-q,.nomotion .lv-board li,.nomotion .lv-pod .step,.nomotion .chips li,.nomotion .lv-time.hot{animation:none!important}
+@media(prefers-reduced-motion:reduce){.pop,.lv-opts.in .lv-opt,.lv-q,.lv-board li,.lv-pod .step,.chips li,.lv-time.hot,.lv-opt .cnt i,.lv-opts.rev .lv-opt{animation:none!important}}
 </style>
 </head>
 <body>
@@ -4338,6 +4389,28 @@ let liveCleanup = null;
 let hostStop = null;
 const runLiveCleanup = () => { if (hostStop) { try { hostStop(); } catch {} hostStop = null; } if (liveCleanup) { try { liveCleanup(); } catch {} liveCleanup = null; } };
 const fmtN = n => Number(n || 0).toLocaleString('tr-TR');
+const calm = () => document.documentElement.classList.contains('nomotion') || matchMedia('(prefers-reduced-motion: reduce)').matches;
+let sndOn = false, actx = null; try { sndOn = localStorage.getItem('hd-lvsound') === '1'; } catch {}
+function sfx(kind){
+  if (!sndOn) return;
+  try {
+    actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.state === 'suspended') actx.resume();
+    const seq = {tick:[[880,.07]], good:[[523,.12],[659,.12],[784,.22]], bad:[[196,.28]], fan:[[523,.14],[659,.14],[784,.14],[1046,.34]], go:[[660,.1],[990,.16]]}[kind] || [];
+    let t0 = actx.currentTime;
+    seq.forEach(([f, d]) => { const o = actx.createOscillator(), g = actx.createGain(); o.type = kind === 'bad' ? 'sawtooth' : 'sine'; o.frequency.value = f; g.gain.setValueAtTime(.0001, t0); g.gain.exponentialRampToValueAtTime(.18, t0 + .02); g.gain.exponentialRampToValueAtTime(.0001, t0 + d); o.connect(g); g.connect(actx.destination); o.start(t0); o.stop(t0 + d + .02); t0 += d * .9; });
+  } catch {}
+}
+function confetti(n = 60){
+  if (calm()) return;
+  const c = document.createElement('div'); c.className = 'confetti'; c.setAttribute('aria-hidden', 'true');
+  const cols = ['#BE3A2C','#22388C','#F1B93C','#17706E','#fff'];
+  for (let i = 0; i < n; i++) { const e = document.createElement('i'); e.style.cssText = `left:${Math.random() * 100}%;background:${cols[i % 5]};animation-delay:${(Math.random() * .5).toFixed(2)}s;animation-duration:${(1.8 + Math.random() * 1.6).toFixed(2)}s;--dx:${(Math.random() * 160 - 80).toFixed(0)}px;--rot:${(Math.random() * 720 - 360).toFixed(0)}deg;width:${6 + Math.random() * 7 | 0}px;height:${9 + Math.random() * 9 | 0}px`; c.appendChild(e); }
+  document.body.appendChild(c); setTimeout(() => c.remove(), 4200);
+}
+function lvCountUp(el, to, ms = 800){
+  if (!el) return; if (calm() || !to) { el.textContent = '+' + fmtN(to); return; }
+  const t0 = performance.now(); const f = now => { const k = Math.min(1, (now - t0) / ms), e = 1 - Math.pow(1 - k, 3); el.textContent = '+' + fmtN(Math.round(to * e)); if (k < 1 && el.isConnected) requestAnimationFrame(f); }; requestAnimationFrame(f);
+}
 
 function paintLiveBar(){
   const b = $('#livebar'); if (!b) return;
@@ -4362,9 +4435,11 @@ const nameBad = n => !user ? false : (!isAdmin && /(yönetici|admin|moderatör|h
 function pageLive(t){
   runLiveCleanup();
   document.title = 'Canlı yarışma · Hatıra Değer';
-  app.innerHTML = '<div class="wrap narrow live"><div id="lv" aria-live="polite"></div></div>';
+  app.innerHTML = '<div class="wrap narrow live"><button type="button" class="lv-snd" id="lvSnd" aria-pressed="false"></button><div id="lv" aria-live="polite"></div></div>';
   const box = $('#lv');
-  let sid = '', sess = null, unS = null, joined = false, jname = '', mine = null, seen = -9, rcv = 0, fromRefresh = false, snaps = 0, tm = null, busy = false;
+  const paintSnd = () => { const b = $('#lvSnd'); if (!b) return; b.setAttribute('aria-pressed', sndOn); b.textContent = sndOn ? '🔊 Ses açık' : '🔇 Ses kapalı'; };
+  paintSnd(); $('#lvSnd').onclick = () => { sndOn = !sndOn; try { localStorage.setItem('hd-lvsound', sndOn ? '1' : '0'); } catch {} paintSnd(); sfx('go'); };
+  let sid = '', sess = null, unS = null, joined = false, jname = '', mine = null, seen = -9, rcv = 0, fromRefresh = false, snaps = 0, tm = null, busy = false, rdyAt = 0, rdySeen = -9, lastRd = 0, fxDone = '';
   const stopS = () => { if (unS) { unS(); unS = null; } };
   const cleanup = () => { stopS(); clearInterval(tm); window.removeEventListener('livechange', onLive); };
   liveCleanup = cleanup;
@@ -4399,6 +4474,7 @@ function pageLive(t){
     if (!sess) { box.innerHTML = '<div class="loading-page">Yarışma yükleniyor…</div>'; return; }
     const ph = sess.phase;
     if (ph === 'lobby') return drawLobby();
+    if (ph === 'ready') return drawReady();
     if (ph === 'question') return drawQuestion();
     if (ph === 'reveal') return drawReveal();
     return drawFinal();
@@ -4427,14 +4503,19 @@ function pageLive(t){
     box.innerHTML = `${head('Canlı yarışma', esc(sess.title || 'Yarışma'))}<p class="lead">${sess.n || ''} soru hazır. Yarışma birazdan başlıyor.</p>${joinBlock()}<div class="lv-wait" aria-hidden="true"><i></i><i></i><i></i></div>`;
     bindJoin();
   }
+  function drawReady(){
+    const n = (sess.rdy ?? 0) + 1;
+    box.innerHTML = `<div class="lv-ready"><p class="lv-k">Soru ${n} / ${sess.n}</p><div class="lv-count pop" id="rd">3</div><p class="lv-go">Hazır ol!</p></div>`;
+    lastRd = 0;
+  }
   function drawQuestion(){
     const c = sess.cur; if (!c) return;
     const answered = mine && mine.i === c.i, rem = remain(), over = rem <= 0;
     const can = joined && !answered && !over;
-    box.innerHTML = `<div class="lv-top"><span>Soru ${c.i + 1} / ${sess.n}</span><span id="tt" class="lv-time" role="timer" aria-live="off">${Math.max(0, Math.ceil(rem))}</span></div>
+    box.innerHTML = `<div class="lv-top"><span>Soru ${c.i + 1} / ${sess.n}</span><span id="tt" class="lv-time${rem <= 5 && rem > 0 ? ' hot' : ''}" role="timer" aria-live="off">${Math.max(0, Math.ceil(rem))}</span></div>
       <div class="lv-bar" aria-hidden="true"><i id="tb" style="width:${clamp01(rem / c.s) * 100}%"></i></div>
       <h1 class="lv-q">${esc(c.q)}</h1>
-      <div class="lv-opts">${c.o.map((o, i) => `<button type="button" class="lv-opt${answered && mine.c === i ? ' pick' : ''}" data-i="${i}" style="--oc:${LCOL[i]}" ${can ? '' : 'disabled'}><span class="sh" aria-hidden="true">${LSH[i]}</span><span class="tx">${esc(o)}</span></button>`).join('')}</div>
+      <div class="lv-opts in">${c.o.map((o, i) => `<button type="button" class="lv-opt${answered && mine.c === i ? ' pick' : ''}" data-i="${i}" style="--oc:${LCOL[i]};--d:${i * .09}s" ${can ? '' : 'disabled'}><span class="sh" aria-hidden="true">${LSH[i]}</span><span class="tx">${esc(o)}</span></button>`).join('')}</div>
       <p class="lv-status" aria-live="polite">${!user ? 'Cevap vermek için giriş yapmalısın.' : !joined ? 'Cevap vermek için önce yarışmaya katıl.' : answered ? 'Cevabın alındı. Diğerleri bekleniyor…' : over ? 'Süre doldu.' : ''}</p>
       ${!joined ? joinBlock() : ''}`;
     bindJoin();
@@ -4455,17 +4536,21 @@ function pageLive(t){
     box.innerHTML = `<div class="lv-top"><span>Soru ${(r.i ?? 0) + 1} / ${sess.n}</span><span></span></div>
       <h1 class="lv-q">${esc(c.q)}</h1>
       <div class="lv-opts rev">${c.o.map((o, i) => `<div class="lv-opt ${i === r.a ? 'right' : 'dim'}${answered && mine.c === i && i !== r.a ? ' wrong' : ''}" style="--oc:${LCOL[i]}"><span class="sh" aria-hidden="true">${LSH[i]}</span><span class="tx">${esc(o)}${i === r.a ? ' <b class="tick">✓ Doğru cevap</b>' : ''}</span><span class="cnt" aria-label="${dist[i]} kişi"><i style="width:${dist[i] / mx * 100}%"></i><em>${dist[i]}</em></span></div>`).join('')}</div>
-      ${joined ? `<div class="lv-card ${ok ? 'ok' : ''}"><h2>${!answered ? 'Cevap vermedin' : ok ? 'Doğru!' : 'Bu sefer olmadı'}</h2><p>${ok ? `+${fmtN(gain)} puan` : 'Puan yok'} · Toplam <b>${fmtN(total)}</b>${rk ? ` · Sıran <b>${rk}.</b>` : ''}</p></div>` : ''}
+      ${joined ? `<div class="lv-card pop ${ok ? 'ok' : answered ? 'bad' : ''}"><h2>${!answered ? 'Cevap vermedin' : ok ? 'Doğru!' : 'Bu sefer olmadı'}</h2><p>${ok ? `<b id="gain" class="gain">+0</b> puan` : 'Puan yok'} · Toplam <b>${fmtN(total)}</b>${rk ? ` · Sıran <b>${rk}.</b>` : ''}</p></div>` : ''}
       <h2 class="lv-h2">İlk beşte olanlar</h2>${board((sess.top || []).slice(0, 5), meMatch)}`;
+    const key = 'r' + r.i;
+    if (fxDone !== key) { fxDone = key; if (ok) { lvCountUp($('#gain'), gain); confetti(55); sfx('good'); } else if (joined) sfx('bad'); }
+    else if (ok) { const g = $('#gain'); if (g) g.textContent = '+' + fmtN(gain); }
   }
   function drawFinal(){
     const top = sess.top || [], rk = user ? rankOf(sess.scores, user.uid) : 0, me = user && sess.scores && sess.scores[user.uid];
     const pod = top.slice(0, 3);
     box.innerHTML = `${head('Yarışma bitti', esc(sess.title || 'Sonuçlar'))}
       ${me ? `<div class="lv-card ok"><h2>${rk}. oldun</h2><p>Toplam <b>${fmtN(me[0])}</b> puan. Katıldığın için teşekkürler.</p></div>` : '<p class="lead">Katılan herkese teşekkürler.</p>'}
-      ${pod.length ? `<div class="lv-pod">${[1, 0, 2].filter(i => pod[i]).map(i => `<div class="p${i + 1}"><span class="m">${i + 1}</span><strong>${esc(pod[i].n)}</strong><b>${fmtN(pod[i].s)}</b></div>`).join('')}</div>` : ''}
+      ${pod.length ? `<div class="lv-pod">${[1, 0, 2].filter(i => pod[i]).map(i => `<div class="p${i + 1}"><strong>${esc(pod[i].n)}</strong><b>${fmtN(pod[i].s)}</b><span class="step"><span class="m">${i + 1}</span></span></div>`).join('')}</div>` : ''}
       <h2 class="lv-h2">Sıralama</h2>${board(top.slice(0, 10), meMatch)}
       <div class="actions"><a class="btn" href="#/">Sembolleri keşfet</a><a class="btn btn-line dark" href="#/test">Tek başına dene</a></div>`;
+    if (fxDone !== 'final') { fxDone = 'final'; if (rk && rk <= 3) { confetti(90); } sfx('fan'); }
   }
 
   function attach(){
@@ -4478,6 +4563,7 @@ function pageLive(t){
         if (mine && mine.i !== d.cur.i) mine = null;
         if (fromRefresh && user) getDoc(doc(db,'sessions',sid,'answers',user.uid + '_' + d.cur.i)).then(a => { if (a.exists()) { mine = {i:d.cur.i, c:a.data().c}; draw(); } }).catch(() => {});
       }
+      if (d && d.phase === 'ready' && d.rdy !== rdySeen) { rdySeen = d.rdy; rdyAt = Date.now(); mine = null; }
       sess = d; draw();
     }, e => { console.warn(e); box.innerHTML = `<div class="empty" style="display:block"><h2>Yarışmaya bağlanılamadı</h2><p>${esc(fbErr(e))}</p></div>`; });
     if (user) getDoc(doc(db,'sessions',sid,'players',user.uid)).then(s => { if (s.exists()) { joined = true; jname = s.data().name; draw(); } }).catch(() => {});
@@ -4491,9 +4577,10 @@ function pageLive(t){
   }
   window.addEventListener('livechange', onLive);
   tm = setInterval(() => {
+    if (sess && sess.phase === 'ready') { const n = Math.max(1, 3 - Math.floor((Date.now() - rdyAt) / 1000)), e = $('#rd'); if (e && n !== lastRd) { lastRd = n; e.textContent = n; e.classList.remove('pop'); void e.offsetWidth; e.classList.add('pop'); sfx('tick'); } return; }
     if (!sess || sess.phase !== 'question' || !sess.cur) return;
     const r = remain(), tt = $('#tt'), tb = $('#tb');
-    if (tt) tt.textContent = Math.max(0, Math.ceil(r));
+    if (tt) { tt.textContent = Math.max(0, Math.ceil(r)); tt.classList.toggle('hot', r <= 5 && r > 0); }
     if (tb) tb.style.width = clamp01(r / sess.cur.s) * 100 + '%';
     if (r <= 0 && box.querySelector('.lv-opt:not([disabled])')) drawQuestion();
   }, 250);
@@ -4501,7 +4588,7 @@ function pageLive(t){
 }
 
 /* ---------- Yönetici: yarışma sekmesi ---------- */
-const QERR = 'Her soruda soru metni, 4 farklı seçenek ve doğru cevap olmalı.';
+const QERR = 'Soru metni, 4 farklı seçenek yaz ve doğru cevabı işaretle.';
 function genQuestions(cards, n){
   const pub = cards.filter(c => c.status === 'published'), out = [];
   const regs = [...new Set(pub.map(c => c.region).filter(Boolean))], cats = [...new Set(pub.map(c => c.category).filter(Boolean))];
@@ -4522,7 +4609,7 @@ function genQuestions(cards, n){
   }
   return out;
 }
-const blankQ = () => ({q:'', o:['','','',''], a:0, s:20});
+const blankQ = () => ({q:'', o:['','','',''], a:-1, s:20});
 
 async function adminLive(box, t){
   runLiveCleanup();
@@ -4583,13 +4670,15 @@ async function adminLive(box, t){
     const paint = () => {
       qs.innerHTML = e.questions.map((q, i) => `<fieldset class="qq" data-i="${i}"><legend>Soru ${i + 1}${q.auto ? ' <small>otomatik taslak</small>' : ''}</legend>
         <div class="field"><label for="q${i}">Soru metni</label><textarea id="q${i}" maxlength="240" rows="2">${esc(q.q)}</textarea></div>
-        <div class="qo">${q.o.map((o, k) => `<label class="qoi" style="--oc:${LCOL[k]}"><input type="radio" name="a${i}" value="${k}" ${q.a === k ? 'checked' : ''} aria-label="Doğru cevap: seçenek ${k + 1}"><span class="sh" aria-hidden="true">${LSH[k]}</span><input type="text" maxlength="80" data-o="${k}" value="${esc(o)}" placeholder="Seçenek ${k + 1}" aria-label="Seçenek ${k + 1}"></label>`).join('')}</div>
+        <p class="qhint">Seçenekleri yaz, sonra <b>doğru olanın yanındaki “Doğru cevap” düğmesine</b> bas.</p>
+        <div class="qo">${q.o.map((o, k) => `<div class="qoi${q.a === k ? ' isok' : ''}" style="--oc:${LCOL[k]}"><span class="sh" aria-hidden="true">${LSH[k]}</span><input type="text" maxlength="80" data-o="${k}" value="${esc(o)}" placeholder="Seçenek ${k + 1}" aria-label="Seçenek ${k + 1}"><label class="qok"><input type="radio" name="a${i}" value="${k}" ${q.a === k ? 'checked' : ''}><span>${q.a === k ? '✓ Doğru cevap' : 'Doğru cevap'}</span></label></div>`).join('')}</div>
         <div class="qm"><label>Süre <select data-s>${LSECS.map(s => `<option ${q.s === s ? 'selected' : ''}>${s}</option>`).join('')}</select> sn</label>
           <span class="acts"><button type="button" class="btn btn-sm btn-line dark" data-up ${i ? '' : 'disabled'}>Yukarı</button><button type="button" class="btn btn-sm btn-line dark" data-dn ${i < e.questions.length - 1 ? '' : 'disabled'}>Aşağı</button><button type="button" class="btn btn-sm btn-line dark" data-rm>Sil</button></span></div></fieldset>`).join('');
     };
     const sync = () => { e.title = $('#qt').value; e.desc = $('#qd').value;
-      qs.querySelectorAll('.qq').forEach(f => { const i = +f.dataset.i, q = e.questions[i]; q.q = f.querySelector('textarea').value; q.o = [...f.querySelectorAll('[data-o]')].map(x => x.value); const r = f.querySelector('input[type=radio]:checked'); q.a = r ? +r.value : 0; q.s = +f.querySelector('[data-s]').value; }); };
+      qs.querySelectorAll('.qq').forEach(f => { const i = +f.dataset.i, q = e.questions[i]; q.q = f.querySelector('textarea').value; q.o = [...f.querySelectorAll('[data-o]')].map(x => x.value); const r = f.querySelector('input[type=radio]:checked'); q.a = r ? +r.value : -1; q.s = +f.querySelector('[data-s]').value; }); };
     paint();
+    qs.onchange = ev => { if (ev.target.type === 'radio') { const f = ev.target.closest('.qq'); f.querySelectorAll('.qoi').forEach(d => { const on = d.querySelector('input[type=radio]').checked; d.classList.toggle('isok', on); d.querySelector('.qok span').textContent = on ? '✓ Doğru cevap' : 'Doğru cevap'; }); } };
     qs.onclick = ev => { const b = ev.target.closest('button'); if (!b) return; const f = b.closest('.qq'); if (!f) return; sync(); const i = +f.dataset.i, a = e.questions;
       if (b.hasAttribute('data-rm')) { if (a.length > 1) a.splice(i, 1); } else if (b.hasAttribute('data-up') && i) [a[i - 1], a[i]] = [a[i], a[i - 1]]; else if (b.hasAttribute('data-dn') && i < a.length - 1) [a[i + 1], a[i]] = [a[i], a[i + 1]]; paint(); };
     $('#qAdd').onclick = () => { sync(); e.questions.push(blankQ()); paint(); qs.lastElementChild.querySelector('textarea').focus(); };
@@ -4622,14 +4711,14 @@ async function adminLive(box, t){
 
 /* ---------- Yönetici: canlı yönetim konsolu ---------- */
 function hostConsole(box, t){
-  const sid = liveNow.sid; let sess = null, quiz = null, players = [], answers = [], auto = true, startedLocal = 0, busy = false, tm = null;
+  const sid = liveNow.sid; let sess = null, quiz = null, players = [], answers = [], auto = true, startedLocal = 0, busy = false, tm = null, pend = false, readyAt = 0;
   const unsubs = [];
   const cleanup = () => { unsubs.forEach(u => { try { u(); } catch {} }); clearInterval(tm); };
   if (hostStop) { try { hostStop(); } catch {} } hostStop = cleanup;
   const remain = () => { if (!sess || !sess.cur) return 0; const s = startedLocal ? (Date.now() - startedLocal) / 1000 : (sess.qStart ? (Date.now() - tsMs(sess.qStart)) / 1000 : 0); return sess.cur.s - s; };
   const cnt = i => answers.filter(a => a.q === i).length;
 
-  unsubs.push(onSnapshot(doc(db,'sessions',sid), s => { if (t !== token) return cleanup(); const d = s.exists() ? s.data() : null; if (d && d.phase !== 'question') startedLocal = 0; sess = d; draw(); }, e => console.warn(e)));
+  unsubs.push(onSnapshot(doc(db,'sessions',sid), s => { if (t !== token) return cleanup(); const d = s.exists() ? s.data() : null; if (d && d.phase !== 'question') startedLocal = 0; if (d && d.phase === 'ready' && !pend) { pend = true; readyAt = Date.now(); setTimeout(() => startQ(d.rdy), 3100); } sess = d; draw(); }, e => console.warn(e)));
   unsubs.push(onSnapshot(collection(db,'sessions',sid,'players'), s => { players = s.docs.map(d => ({id:d.id, ...d.data()})); draw(); }, e => console.warn(e)));
   unsubs.push(onSnapshot(collection(db,'sessions',sid,'answers'), s => { answers = s.docs.map(d => d.data()); softCount(); }, e => console.warn(e)));
   getDoc(doc(db,'sessions',sid)).then(async s => { if (s.exists()) { try { const q = await getDoc(doc(db,'quizzes',s.data().quizId)); quiz = q.exists() ? q.data() : null; } catch (e) { console.error(e); } draw(); } });
@@ -4642,26 +4731,38 @@ function hostConsole(box, t){
     const names = players.map(p => `<li>${esc(p.name)}</li>`).join('');
     let body = '';
     if (ph === 'lobby') body = `<p class="hs">Oyuncular katılıyor. Herkes hazır olunca başlat.</p><div class="hb"><b id="hPl">${players.length}</b> kişi katıldı</div><ul class="chips">${names}</ul><div class="actions"><button class="btn" id="hStart" type="button" ${players.length ? '' : 'disabled'}>İlk soruyu başlat</button><button class="btn btn-line dark" id="hClose" type="button">İptal et</button></div>`;
+    else if (ph === 'ready') body = `<p class="hs">Soru ${(sess.rdy ?? 0) + 1} / ${sess.n}</p><div class="lv-count pop" id="hRd">3</div><p class="hs">Oyuncular hazırlanıyor…</p>`;
     else if (ph === 'question') { const c = sess.cur; body = `<p class="hs">Soru ${c.i + 1} / ${sess.n} · <span id="hT">${Math.max(0, Math.ceil(remain()))}</span> sn</p><h3 class="hq">${esc(c.q)}</h3><ol class="hopts">${c.o.map((o, k) => `<li style="--oc:${LCOL[k]}"><span>${LSH[k]}</span>${esc(o)}${quiz.questions[c.i] && quiz.questions[c.i].a === k ? ' <b>✓</b>' : ''}</li>`).join('')}</ol>
       <div class="hb">Cevaplayan: <b id="hAns">${cnt(c.i)} / ${players.length}</b></div>
       <label class="chk"><input type="checkbox" id="hAuto" ${auto ? 'checked' : ''}> Süre bitince cevabı kendiliğinden göster</label>
-      <div class="actions"><button class="btn" id="hRev" type="button">Cevabı şimdi göster</button></div>`; }
+      <div class="actions"><button class="btn" id="hRev" type="button">Cevabı şimdi göster</button><button class="btn btn-line dark" id="hEnd" type="button">Yarışmayı bitir</button></div>`; }
     else if (ph === 'reveal') { const r = sess.rev || {}; body = `<p class="hs">Soru ${(r.i ?? 0) + 1} / ${sess.n} · cevap gösteriliyor</p><h3 class="hq">${esc(sess.cur.q)}</h3><p>Doğru cevap: <strong>${LSH[r.a]} ${esc(sess.cur.o[r.a])}</strong> · ${(r.d || [])[r.a] || 0} kişi bildi</p>
       <ol class="lv-board">${(sess.top || []).slice(0, 5).map((p, k) => `<li><span class="r">${k + 1}</span><span class="n">${esc(p.n)}</span><b>${fmtN(p.s)}</b></li>`).join('')}</ol>
-      <div class="actions"><button class="btn" id="hNext" type="button">${last ? 'Sonuçları göster' : 'Sonraki soru'}</button></div>`; }
+      <div class="actions"><button class="btn" id="hNext" type="button">${last ? 'Sonuçları göster' : 'Sonraki soru'}</button>${last ? '' : '<button class="btn btn-line dark" id="hEnd" type="button">Yarışmayı bitir</button>'}</div>`; }
     else body = `<p class="hs">Yarışma bitti.</p><ol class="lv-board">${(sess.top || []).slice(0, 10).map((p, k) => `<li><span class="r">${k + 1}</span><span class="n">${esc(p.n)}</span><b>${fmtN(p.s)}</b></li>`).join('')}</ol>
       <div class="actions"><button class="btn" id="hDone" type="button">Duyuruyu kaldır ve kapat</button></div><p class="muted">Sonuçlar, duyuru kaldırılana kadar ziyaretçilere gösterilir.</p>`;
     box.innerHTML = `<div class="panel hostc"><h2>Yönetim konsolu · ${esc(sess.title)}</h2>${body}</div>`;
     const on = (id, f) => { const b = $('#' + id); if (b) b.onclick = f; };
-    on('hStart', () => nextQ(0)); on('hClose', closeLive); on('hRev', reveal); on('hNext', () => last ? finish() : nextQ(i + 1)); on('hDone', closeLive);
+    on('hStart', () => nextQ(0)); on('hClose', closeLive); on('hEnd', endNow); on('hRev', reveal); on('hNext', () => last ? finish() : nextQ(i + 1)); on('hDone', closeLive);
     const ac = $('#hAuto'); if (ac) ac.onchange = () => { auto = ac.checked; };
   }
   async function nextQ(i){
-    if (busy) return; busy = true;
-    const q = quiz.questions[i];
-    try { startedLocal = Date.now(); await updateDoc(doc(db,'sessions',sid), {phase:'question', cur:{i, q:q.q, o:q.o, s:q.s}, qStart:serverTimestamp(), rev:null}); }
+    if (busy || pend) return; busy = true;
+    try { await updateDoc(doc(db,'sessions',sid), {phase:'ready', rdy:i, cur:null, rev:null}); }
     catch (e) { console.error(e); toast(fbErr(e), 'err'); }
     busy = false;
+  }
+  async function startQ(i){
+    const q = quiz && quiz.questions[i];
+    try { if (!q) throw new Error('soru yok'); startedLocal = Date.now(); await updateDoc(doc(db,'sessions',sid), {phase:'question', cur:{i, q:q.q, o:q.o, s:q.s}, qStart:serverTimestamp(), rev:null, rdy:null}); }
+    catch (e) { console.error(e); toast(fbErr(e), 'err'); }
+    pend = false;
+  }
+  async function endNow(){
+    const ph = sess && sess.phase;
+    if (!(await confirmDialog('Yarışma şimdi bitirilsin mi?', ph === 'question' ? 'Bu sorunun sonucu hesaplanır, sonra herkese son sıralama gösterilir.' : 'Herkese şu anki puanlarla son sıralama gösterilir.', 'Yarışmayı bitir'))) return;
+    if (ph === 'question') await reveal();
+    await finish();
   }
   async function reveal(){
     if (busy) return; busy = true;
@@ -4695,6 +4796,7 @@ function hostConsole(box, t){
     catch (e) { console.error(e); toast(fbErr(e), 'err'); }
   }
   tm = setInterval(() => {
+    if (sess && sess.phase === 'ready') { const n = Math.max(1, 3 - Math.floor((Date.now() - readyAt) / 1000)), e = $('#hRd'); if (e && +e.textContent !== n) { e.textContent = n; e.classList.remove('pop'); void e.offsetWidth; e.classList.add('pop'); } return; }
     if (!sess || sess.phase !== 'question') return;
     const r = remain(), e = $('#hT'); if (e) e.textContent = Math.max(0, Math.ceil(r));
     if (auto && r <= -2.5 && !busy) reveal();
