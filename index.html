@@ -861,6 +861,106 @@ h1,h2,h3,h4,p,li,a,button,label,.card,.panel,dd,dt,td,th,blockquote{overflow-wra
 .qoi.isok .qok{background:#1F7A52;border-color:#1F7A52;color:#fff}
 .nomotion .pop,.nomotion .lv-opts.in .lv-opt,.nomotion .lv-q,.nomotion .lv-board li,.nomotion .lv-pod .step,.nomotion .chips li,.nomotion .lv-time.hot{animation:none!important}
 @media(prefers-reduced-motion:reduce){.pop,.lv-opts.in .lv-opt,.lv-q,.lv-board li,.lv-pod .step,.chips li,.lv-time.hot,.lv-opt .cnt i,.lv-opts.rev .lv-opt{animation:none!important}}
+
+/* ---- telefon duzeltmeleri 2 ---- */
+.npop[hidden]{display:none!important}
+.nph{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 10px 0 0;border-bottom:1px solid var(--line)}
+.nph h4{border:0!important;flex:1}
+.npx{border:1.5px solid var(--line);background:#fff;border-radius:999px;font:inherit;font-weight:700;font-size:.9rem;padding:.3em .9em;cursor:pointer;color:var(--ink)}
+.livebar{top:var(--hh,60px);z-index:39}
+@media (max-width:720px){
+  .bellwrap{position:static}
+  .npop{position:fixed;left:10px;right:10px;top:calc(var(--hh,60px) + 8px);width:auto;max-height:calc(100dvh - var(--hh,60px) - 24px);display:flex;flex-direction:column;z-index:70;border-radius:18px}
+  .npop ul{flex:1;max-height:none;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  .npop li a{white-space:normal;overflow-wrap:anywhere;padding:14px 12px;font-size:1.06rem;line-height:1.45;min-height:48px}
+  .npop h4{font-size:1.1rem}
+  #toast{left:12px;right:12px;bottom:max(18px,env(safe-area-inset-bottom));transform:translateY(24px);max-width:none;border-radius:18px;padding:14px 18px;font-size:1.05rem;line-height:1.4;justify-content:flex-start}
+  #toast.show{transform:translateY(0)}
+}
+@media (max-width:720px){#toast{border:2px solid rgba(255,255,255,.55);box-shadow:0 10px 30px rgba(0,0,0,.45)}}
+
+/* ===== Oyun modu (telefon, tam ekran) ===== */
+body.lvgame{overflow:hidden}
+.live.game{position:fixed;inset:0;z-index:150;width:auto;max-width:none;margin:0;padding:calc(env(safe-area-inset-top,0px) + 54px) 16px calc(env(safe-area-inset-bottom,0px) + 16px);overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;display:flex;flex-direction:column;color:#fff;background-color:#22388C;background-image:radial-gradient(120% 70% at 50% -10%,rgba(255,255,255,.2),transparent 60%),radial-gradient(circle at 20% 110%,rgba(241,185,60,.18),transparent 45%);transition:background-color .5s ease}
+.live.game[data-ph=ready]{background-color:#8E2A1F}
+.live.game[data-ph=question]{background-color:#2A2F7A}
+.live.game[data-ph=reveal]{background-color:#3a4268}
+.live.game[data-ph=reveal][data-r=ok]{background-color:#1F7A52}
+.live.game[data-ph=reveal][data-r=bad]{background-color:#B03326}
+.live.game[data-ph=finished]{background-color:#141F5E}
+.live.game #lv{flex:1;display:flex;flex-direction:column;width:100%;max-width:560px;margin:0 auto;min-height:0}
+.live.game h1,.live.game h2{color:#fff}
+.live.game .lv-k{color:#F1B93C}
+.live.game .lead,.live.game .lv-sub{color:rgba(255,255,255,.88)}
+.lv-sub{margin:.3em 0;font-size:1.05rem;line-height:1.5}
+.live.game .lv-snd{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:12px;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.45);color:#fff;z-index:2;padding:.45em .9em;font-size:.95rem}
+.lv-exit{display:none}
+.live.game .lv-exit:not([hidden]){display:block;position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);left:12px;z-index:2;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.45);color:#fff;border-radius:999px;padding:.45em 1em;font:inherit;font-weight:800;font-size:.95rem;min-height:40px}
+.live.game .lv-top{color:#fff}
+.live.game .lv-time{background:#fff;color:#BE3A2C;border-radius:50%;width:58px;height:58px;display:grid;place-items:center;min-width:0;font-size:1.8rem;text-align:center;box-shadow:0 4px 0 rgba(0,0,0,.25)}
+.live.game .lv-bar{background:rgba(255,255,255,.25);height:12px;margin:12px 0 4px}
+.live.game .lv-q{background:#fff;color:#16183a;border-radius:20px;padding:18px 16px;font-size:clamp(1.15rem,5.2vw,1.7rem)!important;text-align:center;margin:12px 0 14px;box-shadow:0 6px 0 rgba(0,0,0,.22);font-weight:700}
+.live.game .lv-opts{grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:10px;margin:auto 0 0;flex:1;min-height:40vh}
+.live.game .lv-opt{flex-direction:column;justify-content:center;text-align:center;gap:6px;min-height:0;padding:10px 8px;font-size:clamp(.98rem,4.2vw,1.25rem);font-weight:800;box-shadow:0 6px 0 rgba(0,0,0,.3);border-radius:16px}
+.live.game .lv-opt .sh{font-size:1.7rem;width:auto}
+.live.game .lv-opt .tx{flex:none;max-width:100%}
+.live.game .lv-opt[disabled]{opacity:.5}
+.live.game .lv-opts.rev{grid-template-columns:1fr;grid-auto-rows:auto;flex:none;min-height:0;margin:6px 0 0}
+.live.game .lv-opts.rev .lv-opt{flex-direction:row;text-align:left;min-height:56px;padding:10px 14px;box-shadow:none}
+.live.game .lv-opts.rev .lv-opt .sh{width:1.6em}
+.live.game .lv-opt.right{outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,255,255,.25)}
+.live.game .lv-status{color:#fff;text-align:center}
+.live.game .lv-h2{font-size:1.2rem;margin:20px 0 8px}
+.live.game .lv-board li{background:rgba(255,255,255,.14);border:0;color:#fff}
+.live.game .lv-board .r{color:#fff}
+.live.game .lv-board li.me{background:#F1B93C;color:#1b1b1b}
+.live.game .lv-board li.me .r{color:#1b1b1b}
+.live.game .lv-card{background:rgba(255,255,255,.14);border:0;color:#fff}
+.live.game .lv-card.ok{background:rgba(255,255,255,.2)}
+.lv-lobby{margin:auto;text-align:center;padding:10px 0}
+.lv-lobby h1{font-size:clamp(2rem,9vw,3rem)!important;margin:.1em 0}
+.lv-pulse{position:relative;width:110px;height:110px;margin:0 auto 18px;display:grid;place-items:center}
+.lv-pulse b{position:relative;width:78px;height:78px;border-radius:50%;background:#F1B93C;color:#141F5E;display:grid;place-items:center;font-size:2.4rem;animation:lvpop .6s cubic-bezier(.2,1.6,.4,1) both}
+.lv-pulse i{position:absolute;inset:0;border-radius:50%;border:3px solid rgba(255,255,255,.55);animation:lvring 2s ease-out infinite}
+.lv-pulse i+i{animation-delay:1s}
+@keyframes lvring{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.5);opacity:0}}
+.live.game .lv-wait i{background:#fff}
+.live.game .lv-ready{margin:auto;padding:0}
+.live.game .lv-count{color:#fff;text-shadow:0 8px 0 rgba(0,0,0,.25)}
+.live.game .lv-go{color:#FFE08A}
+.lv-sent{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:20px 0}
+.lv-sent .big{width:120px;height:120px;border-radius:30px;background:var(--oc);display:grid;place-items:center;font-size:3.6rem;color:#fff;box-shadow:0 8px 0 rgba(0,0,0,.3),0 0 0 6px rgba(255,255,255,.35);margin-bottom:12px}
+.lv-sent h2{font-size:1.7rem;margin:0}.lv-sent p{margin:0;font-size:1.15rem;font-weight:700}
+.lv-res{text-align:center;padding:6px 0 4px}
+.lv-res .ico{width:118px;height:118px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;margin:6px auto 8px;font-size:4.4rem;line-height:1;font-weight:800;box-shadow:0 0 0 8px rgba(255,255,255,.14)}
+.lv-res.ok .ico{animation:lvpop .6s cubic-bezier(.2,1.6,.4,1) both,lvbeat 1.2s .6s ease-in-out 2}
+.lv-res.bad .ico{animation:lvshake .6s ease both}
+.live .lv-res h1{font-size:clamp(2.2rem,10vw,3.2rem);margin:.1em 0}
+.lv-res .pts{margin:0;font-size:1.2rem;font-weight:700}
+.lv-res .pts b{font-family:var(--display);font-size:2.8rem;color:#FFE08A}
+.live.game .lv-res+.lv-q{font-size:1.05rem!important;padding:12px 14px;margin:14px 0 8px;font-weight:600}
+@keyframes lvbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+/* podyum */
+.pod2{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:8px;align-items:end;margin:16px 0 10px}
+.pod2 .c{display:flex;flex-direction:column;align-items:center;min-width:0;grid-row:1}
+.pod2 .c1{grid-column:2}.pod2 .c2{grid-column:1}.pod2 .c3{grid-column:3}
+.pod2 .md{font-size:2rem;line-height:1;animation:lvnm .6s ease both;animation-delay:var(--nd)}
+.pod2 .nm{text-align:center;font-size:1rem;line-height:1.2;overflow-wrap:anywhere;margin:2px 0;animation:lvnm .6s ease both;animation-delay:var(--nd)}
+.pod2 .sc{color:#FFE08A;font-family:var(--display);margin-bottom:6px;animation:lvnm .6s ease both;animation-delay:var(--nd)}
+.pod2 .stp{width:100%;display:flex;justify-content:center;align-items:flex-start;padding-top:6px;border-radius:14px 14px 0 0;transform-origin:bottom;animation:lvstep .9s cubic-bezier(.2,1.1,.4,1) both;animation-delay:var(--sd)}
+.pod2 .m{font-family:var(--display);font-size:2.4rem;color:#fff;line-height:1.1}
+.pod2 .c1 .stp{height:clamp(120px,21vh,180px);background:linear-gradient(#F1B93C,#B7860B)}
+.pod2 .c2 .stp{height:clamp(88px,15vh,130px);background:linear-gradient(#8FA0D8,#4C5F9E)}
+.pod2 .c3 .stp{height:clamp(64px,11vh,96px);background:linear-gradient(#D98B4F,#9A5A28)}
+@keyframes lvnm{0%{opacity:0;transform:translateY(14px) scale(.9)}100%{opacity:1;transform:none}}
+.lv-card.fin,.lead.fin,.lv-h2.fin,.actions.fin{animation:lvnm .6s ease both;animation-delay:4.3s}
+.fin2 .lv-board li{animation:lvnm .5s ease both;animation-delay:calc(4.6s + var(--i,0) * .12s)}
+.lv-btn{background:#fff!important;color:#141F5E!important;border-color:#fff!important}
+.lv-btn.line{background:transparent!important;color:#fff!important}
+.live.game .actions.fin{margin-bottom:8px}
+@media (max-height:640px){.live.game .lv-res .ico{width:84px;height:84px;font-size:3rem}.lv-sent .big{width:90px;height:90px;font-size:2.6rem}}
+.nomotion .pod2 *,.nomotion .fin,.nomotion .fin2 .lv-board li,.nomotion .lv-pulse i,.nomotion .lv-res .ico{animation:none!important}
+@media(prefers-reduced-motion:reduce){.pod2 *,.fin,.fin2 .lv-board li,.lv-pulse i,.lv-res .ico{animation:none!important}}
 </style>
 </head>
 <body>
@@ -3451,12 +3551,13 @@ function renderBell(){
   if (!user) { a.innerHTML = ''; return; }
   const seen = getSeen(), unseen = notifs.filter(n => !seen.has(n.id)).length;
   a.innerHTML = `<button class="icon-btn bell" id="bellBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Bildirimler${unseen ? ': ' + unseen + ' yeni' : ''}">${bellIcon}${unseen ? `<span class="dotc">${unseen}</span>` : ''}</button>
-    <div class="npop" id="npop" hidden><h4>Bildirimler</h4>${notifs.length ? `<ul>${notifs.map(n => `<li class="${seen.has(n.id) ? '' : 'new'}"><a href="${esc(n.href)}">${esc(n.text)}</a></li>`).join('')}</ul>` : '<div class="none">Şu an yeni bir bildirimin yok.</div>'}</div>`;
+    <div class="npop" id="npop" hidden><div class="nph"><h4>Bildirimler</h4><button type="button" class="npx" id="npx" aria-label="Bildirimleri kapat">Kapat</button></div>${notifs.length ? `<ul>${notifs.map(n => `<li class="${seen.has(n.id) ? '' : 'new'}"><a href="${esc(n.href)}">${esc(n.text)}</a></li>`).join('')}</ul>` : '<div class="none">Şu an yeni bir bildirimin yok.</div>'}</div>`;
   $('#bellBtn').onclick = e => {
     e.stopPropagation(); const p = $('#npop'); p.hidden = !p.hidden; $('#bellBtn').setAttribute('aria-expanded', !p.hidden);
+    if (!p.hidden) p.querySelector('ul,.none').scrollTop = 0;
     if (!p.hidden) { const s = getSeen(); notifs.forEach(n => s.add(n.id)); setSeen(s); const d = $('#bellBtn .dotc'); if (d) setTimeout(() => d.remove(), 1200); }
   };
-  $('#npop').addEventListener('click', e => { if (e.target.closest('a')) $('#npop').hidden = true; });
+  $('#npop').addEventListener('click', e => { if (e.target.closest('a') || e.target.closest('#npx')) { $('#npop').hidden = true; $('#bellBtn').setAttribute('aria-expanded', 'false'); } });
 }
 document.addEventListener('click', e => { const p = $('#npop'); if (p && !p.hidden && !e.target.closest('.bellwrap')) p.hidden = true; });
 async function loadNotifs(){
@@ -4387,7 +4488,10 @@ const LCOL = ['#BE3A2C','#22388C','#8A6410','#17706E'], LSH = ['▲','◆','●'
 let liveNow;            // undefined: henüz bilinmiyor, null: yok
 let liveCleanup = null;
 let hostStop = null;
+let liveLock = false;
+addEventListener('beforeunload', e => { if (liveLock) { e.preventDefault(); e.returnValue = ''; } });
 const runLiveCleanup = () => { if (hostStop) { try { hostStop(); } catch {} hostStop = null; } if (liveCleanup) { try { liveCleanup(); } catch {} liveCleanup = null; } };
+(() => { const h = document.querySelector('.site-head'); const set = () => document.documentElement.style.setProperty('--hh', (h ? h.offsetHeight : 60) + 'px'); set(); addEventListener('resize', set); if (window.ResizeObserver && h) new ResizeObserver(set).observe(h); })();
 const fmtN = n => Number(n || 0).toLocaleString('tr-TR');
 const calm = () => document.documentElement.classList.contains('nomotion') || matchMedia('(prefers-reduced-motion: reduce)').matches;
 let sndOn = false, actx = null; try { sndOn = localStorage.getItem('hd-lvsound') === '1'; } catch {}
@@ -4435,13 +4539,14 @@ const nameBad = n => !user ? false : (!isAdmin && /(yönetici|admin|moderatör|h
 function pageLive(t){
   runLiveCleanup();
   document.title = 'Canlı yarışma · Hatıra Değer';
-  app.innerHTML = '<div class="wrap narrow live"><button type="button" class="lv-snd" id="lvSnd" aria-pressed="false"></button><div id="lv" aria-live="polite"></div></div>';
+  app.innerHTML = '<div class="wrap narrow live" id="lvw"><button type="button" class="lv-exit" id="lvExit" hidden>✕ Çık</button><button type="button" class="lv-snd" id="lvSnd" aria-pressed="false"></button><div id="lv" aria-live="polite"></div></div>';
+  $('#lvExit').onclick = async () => { if (await confirmDialog('Yarışmadan çıkılsın mı?', 'Çıkarsan bu yarışmanın sorularını kaçırırsın. Sonradan aynı yarışmaya yeniden girebilirsin.', 'Çık')) { liveLock = false; document.body.classList.remove('lvgame'); location.hash = '#/'; } };
   const box = $('#lv');
   const paintSnd = () => { const b = $('#lvSnd'); if (!b) return; b.setAttribute('aria-pressed', sndOn); b.textContent = sndOn ? '🔊 Ses açık' : '🔇 Ses kapalı'; };
   paintSnd(); $('#lvSnd').onclick = () => { sndOn = !sndOn; try { localStorage.setItem('hd-lvsound', sndOn ? '1' : '0'); } catch {} paintSnd(); sfx('go'); };
   let sid = '', sess = null, unS = null, joined = false, jname = '', mine = null, seen = -9, rcv = 0, fromRefresh = false, snaps = 0, tm = null, busy = false, rdyAt = 0, rdySeen = -9, lastRd = 0, fxDone = '';
   const stopS = () => { if (unS) { unS(); unS = null; } };
-  const cleanup = () => { stopS(); clearInterval(tm); window.removeEventListener('livechange', onLive); };
+  const cleanup = () => { stopS(); clearInterval(tm); window.removeEventListener('livechange', onLive); document.body.classList.remove('lvgame'); };
   liveCleanup = cleanup;
 
   const remain = () => {
@@ -4451,12 +4556,20 @@ function pageLive(t){
     return r;
   };
   const head = (kicker, title) => `<p class="lv-k">${kicker}</p><h1>${title}</h1>`;
-  const board = (top, isMe) => `<ol class="lv-board">${(top || []).map((p, i) => `<li class="${isMe && isMe(p) ? 'me' : ''}"><span class="r">${i + 1}</span><span class="n">${esc(p.n)}</span><b>${fmtN(p.s)}</b></li>`).join('')}</ol>`;
+  const board = (top, isMe) => `<ol class="lv-board">${(top || []).map((p, i, a) => `<li class="${isMe && isMe(p) ? 'me' : ''}" style="--i:${i}"><span class="r">${1 + a.filter(x => x.s > p.s).length}</span><span class="n">${esc(p.n)}</span><b>${fmtN(p.s)}</b></li>`).join('')}</ol>`;
 
   const meMatch = p => joined && p.n === jname && sess && sess.scores && sess.scores[user.uid] && sess.scores[user.uid][0] === p.s;
+  function setGame(on, ph){
+    const w = $('#lvw'); if (!w) return;
+    w.classList.toggle('game', on); w.dataset.ph = on ? ph : ''; if (!on) delete w.dataset.r;
+    document.body.classList.toggle('lvgame', on);
+    const ex = $('#lvExit'); if (ex) ex.hidden = !(on && ph !== 'finished');
+    if (on && ph !== 'finished') liveLock = true;
+    else if ((on && ph === 'finished') || (!on && (snaps > 0 || !liveNow || !['live','done'].includes(liveNow.mode)))) liveLock = false;
+  }
   function draw(){
     if (t !== token) return cleanup();
-    const L = liveNow;
+    const L = liveNow; setGame(false);
     if (L === undefined) { box.innerHTML = '<div class="loading-page">Yükleniyor…</div>'; return; }
     if (!L || !L.mode) {
       box.innerHTML = `${head('Canlı yarışma', 'Şu an açık bir yarışma yok')}
@@ -4473,11 +4586,13 @@ function pageLive(t){
     }
     if (!sess) { box.innerHTML = '<div class="loading-page">Yarışma yükleniyor…</div>'; return; }
     const ph = sess.phase;
+    if (user && joined && ['lobby','ready','question','reveal','finished'].includes(ph)) setGame(true, ph);
     if (ph === 'lobby') return drawLobby();
     if (ph === 'ready') return drawReady();
     if (ph === 'question') return drawQuestion();
     if (ph === 'reveal') return drawReveal();
-    return drawFinal();
+    if (ph === 'finished') return drawFinal();
+    box.innerHTML = `${head('Canlı yarışma', esc(sess.title || 'Yarışma'))}<p class="lead">Bir sonraki adım hazırlanıyor…</p><div class="lv-wait" aria-hidden="true"><i></i><i></i><i></i></div>`;
   }
 
   function joinBlock(){
@@ -4500,6 +4615,7 @@ function pageLive(t){
     };
   }
   function drawLobby(){
+    if (joined && user) { box.innerHTML = `<div class="lv-lobby"><div class="lv-pulse" aria-hidden="true"><i></i><i></i><b>✓</b></div><p class="lv-k">Katıldın</p><h1>${esc(jname)}</h1><p class="lv-sub">${esc(sess.title || 'Yarışma')} · ${sess.n || ''} soru</p><p class="lv-sub">Yönetici başlatınca soru kendiliğinden gelir.<br>Ekranı kapatma, başka sayfaya geçme.</p><div class="lv-wait" aria-hidden="true"><i></i><i></i><i></i></div></div>`; return; }
     box.innerHTML = `${head('Canlı yarışma', esc(sess.title || 'Yarışma'))}<p class="lead">${sess.n || ''} soru hazır. Yarışma birazdan başlıyor.</p>${joinBlock()}<div class="lv-wait" aria-hidden="true"><i></i><i></i><i></i></div>`;
     bindJoin();
   }
@@ -4512,6 +4628,7 @@ function pageLive(t){
     const c = sess.cur; if (!c) return;
     const answered = mine && mine.i === c.i, rem = remain(), over = rem <= 0;
     const can = joined && !answered && !over;
+    if (joined && answered) { box.innerHTML = `<div class="lv-top"><span>Soru ${c.i + 1} / ${sess.n}</span><span id="tt" class="lv-time${rem <= 5 && rem > 0 ? ' hot' : ''}" role="timer" aria-live="off">${Math.max(0, Math.ceil(rem))}</span></div><div class="lv-bar" aria-hidden="true"><i id="tb" style="width:${clamp01(rem / c.s) * 100}%"></i></div><div class="lv-sent" style="--oc:${LCOL[mine.c]}"><div class="big pop" aria-hidden="true">${LSH[mine.c]}</div><h2>Cevabın alındı</h2><p>${esc(c.o[mine.c])}</p><p class="lv-sub">Süre bitince doğru cevap açıklanır.</p><div class="lv-wait" aria-hidden="true"><i></i><i></i><i></i></div></div>`; return; }
     box.innerHTML = `<div class="lv-top"><span>Soru ${c.i + 1} / ${sess.n}</span><span id="tt" class="lv-time${rem <= 5 && rem > 0 ? ' hot' : ''}" role="timer" aria-live="off">${Math.max(0, Math.ceil(rem))}</span></div>
       <div class="lv-bar" aria-hidden="true"><i id="tb" style="width:${clamp01(rem / c.s) * 100}%"></i></div>
       <h1 class="lv-q">${esc(c.q)}</h1>
@@ -4533,24 +4650,27 @@ function pageLive(t){
     const answered = mine && mine.i === r.i;
     const ok = answered && mine.c === r.a, gain = me ? me[1] : 0, total = me ? me[0] : 0, rk = user ? rankOf(sess.scores, user.uid) : 0;
     const dist = r.d || [0,0,0,0], mx = Math.max(1, ...dist);
+    const w = $('#lvw'); if (w && joined) w.dataset.r = ok ? 'ok' : answered ? 'bad' : 'none';
+    const hero = joined ? `<div class="lv-res ${ok ? 'ok' : answered ? 'bad' : 'none'}"><div class="ico pop" aria-hidden="true">${ok ? '✓' : answered ? '✗' : '⏱'}</div><h1>${!answered ? 'Süre doldu' : ok ? 'Doğru!' : 'Yanlış'}</h1>${ok ? '<p class="pts"><b id="gain" class="gain">+0</b> puan</p>' : '<p class="pts">Bu soruda puan yok</p>'}<p class="lv-sub">Toplam <b>${fmtN(total)}</b> puan${rk ? ` · Sıran <b>${rk}.</b>` : ''}</p></div>` : '';
     box.innerHTML = `<div class="lv-top"><span>Soru ${(r.i ?? 0) + 1} / ${sess.n}</span><span></span></div>
-      <h1 class="lv-q">${esc(c.q)}</h1>
+      ${hero}<h1 class="lv-q">${esc(c.q)}</h1>
       <div class="lv-opts rev">${c.o.map((o, i) => `<div class="lv-opt ${i === r.a ? 'right' : 'dim'}${answered && mine.c === i && i !== r.a ? ' wrong' : ''}" style="--oc:${LCOL[i]}"><span class="sh" aria-hidden="true">${LSH[i]}</span><span class="tx">${esc(o)}${i === r.a ? ' <b class="tick">✓ Doğru cevap</b>' : ''}</span><span class="cnt" aria-label="${dist[i]} kişi"><i style="width:${dist[i] / mx * 100}%"></i><em>${dist[i]}</em></span></div>`).join('')}</div>
-      ${joined ? `<div class="lv-card pop ${ok ? 'ok' : answered ? 'bad' : ''}"><h2>${!answered ? 'Cevap vermedin' : ok ? 'Doğru!' : 'Bu sefer olmadı'}</h2><p>${ok ? `<b id="gain" class="gain">+0</b> puan` : 'Puan yok'} · Toplam <b>${fmtN(total)}</b>${rk ? ` · Sıran <b>${rk}.</b>` : ''}</p></div>` : ''}
       <h2 class="lv-h2">İlk beşte olanlar</h2>${board((sess.top || []).slice(0, 5), meMatch)}`;
     const key = 'r' + r.i;
     if (fxDone !== key) { fxDone = key; if (ok) { lvCountUp($('#gain'), gain); confetti(55); sfx('good'); } else if (joined) sfx('bad'); }
     else if (ok) { const g = $('#gain'); if (g) g.textContent = '+' + fmtN(gain); }
   }
+  let finKey = '';
   function drawFinal(){
     const top = sess.top || [], rk = user ? rankOf(sess.scores, user.uid) : 0, me = user && sess.scores && sess.scores[user.uid];
-    const pod = top.slice(0, 3);
+    const key = sid + '|' + jname + '|' + rk + '|' + top.length; if (finKey === key && box.querySelector('.pod2,.lv-board')) return; finKey = key;
+    const pod = top.slice(0, 3), MD = ['🥇','🥈','🥉'], SD = [2.9, 1.5, .3];
     box.innerHTML = `${head('Yarışma bitti', esc(sess.title || 'Sonuçlar'))}
-      ${me ? `<div class="lv-card ok"><h2>${rk}. oldun</h2><p>Toplam <b>${fmtN(me[0])}</b> puan. Katıldığın için teşekkürler.</p></div>` : '<p class="lead">Katılan herkese teşekkürler.</p>'}
-      ${pod.length ? `<div class="lv-pod">${[1, 0, 2].filter(i => pod[i]).map(i => `<div class="p${i + 1}"><strong>${esc(pod[i].n)}</strong><b>${fmtN(pod[i].s)}</b><span class="step"><span class="m">${i + 1}</span></span></div>`).join('')}</div>` : ''}
-      <h2 class="lv-h2">Sıralama</h2>${board(top.slice(0, 10), meMatch)}
-      <div class="actions"><a class="btn" href="#/">Sembolleri keşfet</a><a class="btn btn-line dark" href="#/test">Tek başına dene</a></div>`;
-    if (fxDone !== 'final') { fxDone = 'final'; if (rk && rk <= 3) { confetti(90); } sfx('fan'); }
+      ${pod.length ? `<div class="pod2" aria-label="İlk üç">${[1, 0, 2].filter(i => pod[i]).map(i => `<div class="c c${i + 1}" style="--sd:${SD[i]}s;--nd:${SD[i] + .7}s"><span class="md" aria-hidden="true">${MD[i]}</span><strong class="nm">${esc(pod[i].n)}</strong><b class="sc">${fmtN(pod[i].s)}</b><span class="stp"><span class="m">${i + 1}</span></span></div>`).join('')}</div>` : ''}
+      ${me ? `<div class="lv-card ok fin"><h2>${rk}. oldun</h2><p>Toplam <b>${fmtN(me[0])}</b> puan. Katıldığın için teşekkürler.</p></div>` : '<p class="lead fin">Katılan herkese teşekkürler.</p>'}
+      <h2 class="lv-h2 fin">Sıralama</h2><div class="fin2">${board(top.slice(0, 10), meMatch)}</div>
+      <div class="actions fin"><a class="btn lv-btn" href="#/">Sembolleri keşfet</a><a class="btn lv-btn line" href="#/test">Tek başına dene</a></div>`;
+    if (fxDone !== 'final') { fxDone = 'final'; const tk = sid; setTimeout(() => { if (t === token && tk === sid && box.querySelector('.pod2')) { confetti(rk && rk <= 3 ? 120 : 70); sfx('fan'); } }, calm() ? 0 : 3700); }
   }
 
   function attach(){
@@ -4610,6 +4730,24 @@ function genQuestions(cards, n){
   return out;
 }
 const blankQ = () => ({q:'', o:['','','',''], a:-1, s:20});
+const SAMPLES = [
+  {id:'hizli', title:'Hızlı deneme (3 soru)', desc:'Sistemi denemek için kısa, 10 saniyelik sorular.', questions:[
+    {q:'Anlatıldığına göre camdaki sarı çiçek neyi anlatırdı?', o:['Evde hasta ya da yaşlı biri var','Evde düğün var','Ev satılık','Misafir kabul edilmiyor'], a:0, s:10},
+    {q:'Eski kapılardaki iki tokmaktan biri tok, biri tiz ses verirdi. Bu ne işe yarardı?', o:['Gelenin erkek mi kadın mı olduğunu anlatırdı','Saati bildirirdi','Komşuyu uyarırdı','Hiçbir anlamı yoktu'], a:0, s:10},
+    {q:'Hatıra Değer’in sloganı nedir?', o:['Hatrı değer, hatıra değer.','Eski dost, yeni dost.','Kapı açık, gönül açık.','Bir çiçek, bin söz.'], a:0, s:10}]},
+  {id:'nezaket', title:'Nezaket işaretleri (6 soru)', desc:'Eski mahallelerin sessiz nezaket dili.', questions:[
+    {q:'Anlatıldığına göre camda sarı çiçek gören satıcılar ne yapardı?', o:['Bağırmadan geçerdi','Kapıyı çalardı','Daha yüksek sesle seslenirdi','Mal indirimi yapardı'], a:0, s:20},
+    {q:'Sarı çiçek görünce çocuklar ne yapardı?', o:['Oyunlarını başka yerde oynardı','Çiçeği toplardı','Kapıyı çalıp kaçardı','Şarkı söylerdi'], a:0, s:20},
+    {q:'Kapıdaki iki tokmaktan hangi ses erkek misafir demekti?', o:['Tok ses','Tiz ses','Hiç ses çıkarmayan','Üç kez art arda vuruş'], a:0, s:20},
+    {q:'Tiz sesli tokmak kimin geldiğini haber verirdi?', o:['Kadın misafirin','Postacının','Çocukların','Komşunun köpeğinin'], a:0, s:20},
+    {q:'Tokmaktan gelenin kim olduğunu anlayan evdekiler ne yapardı?', o:['Ona göre hazırlanırdı','Kapıyı hiç açmazdı','Işıkları söndürürdü','Pencereyi açardı'], a:0, s:20},
+    {q:'Bugün sarı çiçek geleneğini nasıl yaşatabilirsin?', o:['Hasta birinin balkonuna sarı çiçek koyarak','Kapıya yazı asarak','Zili sökerek','Sokağa çiçek atarak'], a:0, s:20}]},
+  {id:'kap', title:'Kapı önü gelenekleri (4 soru)', desc:'Su kabı ve kapı geleneği üzerine kısa sorular.', questions:[
+    {q:'Anlatıldığına göre eski mahallelerde yaz sıcağında kapı önüne ne konurdu?', o:['İçi serin suyla dolu bir kap','Sıcak çay','Mum','Bir sepet meyve'], a:0, s:20},
+    {q:'Su kabının üzerine genellikle ne örtülürdü?', o:['Temiz bir bez','Kalın bir halı','Kâğıt','Hiçbir şey'], a:0, s:20},
+    {q:'Kabın yanına ne bırakılırdı?', o:['Küçük bir tas','Anahtar','Mektup','Bir çift terlik'], a:0, s:20},
+    {q:'Bazı yörelerde suyun içine ne atılırdı?', o:['Bir dal nane ya da bir dilim limon','Şeker','Buz','Tuz'], a:0, s:20}]}
+];
 
 async function adminLive(box, t){
   runLiveCleanup();
@@ -4624,6 +4762,7 @@ async function adminLive(box, t){
       ${live() ? '<div id="hostBox"></div>' : `<div class="actions"><button class="btn" id="qNew" type="button">Yeni yarışma hazırla</button></div>`}</div>
       ${live() ? '' : `<div class="panel"><h2>Hazırladıkların</h2>${quizzes.length ? `<div class="qlist">${quizzes.map(q => `<div class="qrow"><div><strong>${esc(q.title)}</strong><span>${(q.questions || []).length} soru · ${q.status === 'ready' ? 'Hazır' : 'Taslak'}</span></div>
         <div class="acts"><button class="btn btn-sm" data-go="${q.id}" type="button" ${q.status === 'ready' ? '' : 'disabled title="Önce hazır olarak kaydet"'}>Canlı başlat</button><button class="btn btn-sm btn-line dark" data-ann="${q.id}" type="button">Duyuru yap</button><button class="btn btn-sm btn-line dark" data-ed="${q.id}" type="button">Düzenle</button><button class="btn btn-sm btn-line dark" data-del="${q.id}" type="button">Sil</button></div></div>`).join('')}</div>` : '<p class="muted">Henüz yarışma yok. “Yeni yarışma hazırla” ile başla.</p>'}</div>`}
+      ${live() ? '' : `<div class="panel"><h2>Örnek yarışmalar</h2><p class="muted">Hızlı denemek için hazır sorular. Eklenince “Hazırladıkların” listesine düşer, istersen düzenleyebilirsin.</p><div class="qlist">${SAMPLES.map(x => `<div class="qrow"><div><strong>${esc(x.title)}</strong><span>${esc(x.desc)}</span></div><div class="acts"><button class="btn btn-sm" data-smp="${x.id}" data-run="1" type="button">Ekle ve hemen aç</button><button class="btn btn-sm btn-line dark" data-smp="${x.id}" type="button">Sadece ekle</button></div></div>`).join('')}</div></div>`}
       ${liveNow && liveNow.mode === 'announce' ? `<div class="panel"><h2>Yayındaki duyuru</h2><p><strong>${esc(liveNow.title || '')}</strong> ${esc(liveNow.text || '')}</p><div class="actions"><button class="btn btn-sm btn-line dark" id="annOff" type="button">Duyuruyu kaldır</button></div></div>` : ''}`;
     const nb = $('#qNew'); if (nb) nb.onclick = () => { edit = {title:'', desc:'', status:'draft', questions:[blankQ()]}; view = 'edit'; drawEdit(); };
     box.querySelectorAll('[data-ed]').forEach(b => b.onclick = () => { const q = quizzes.find(x => x.id === b.dataset.ed); edit = JSON.parse(JSON.stringify(q)); view = 'edit'; drawEdit(); });
@@ -4631,6 +4770,14 @@ async function adminLive(box, t){
     box.querySelectorAll('[data-go]').forEach(b => b.onclick = () => startLive(quizzes.find(x => x.id === b.dataset.go)));
     box.querySelectorAll('[data-ann]').forEach(b => b.onclick = () => announce(quizzes.find(x => x.id === b.dataset.ann)));
     const ao = $('#annOff'); if (ao) ao.onclick = async () => { try { await deleteDoc(doc(db,'live','now')); toast('Duyuru kaldırıldı.'); } catch (e) { toast(fbErr(e), 'err'); } };
+    box.querySelectorAll('[data-smp]').forEach(b => b.onclick = async () => {
+      const x = SAMPLES.find(z => z.id === b.dataset.smp); b.disabled = true;
+      try { const ref = await addDoc(collection(db,'quizzes'), {title:x.title, desc:x.desc, status:'ready', questions:x.questions.map(q => { const r = q.o[q.a], o = shuffle([...q.o]); return {q:q.q, o, a:o.indexOf(r), s:q.s}; }), updatedAt:serverTimestamp(), createdAt:serverTimestamp(), createdBy:user.uid});
+        toast('Örnek yarışma eklendi.'); await load();
+        if (b.dataset.run) { const q = quizzes.find(z => z.id === ref.id); if (q) return startLive(q); }
+        list(); }
+      catch (e) { console.error(e); toast(fbErr(e), 'err'); b.disabled = false; }
+    });
     if (live()) hostConsole($('#hostBox'), t);
   }
   window.addEventListener('livechange', onLC); liveCleanup = () => window.removeEventListener('livechange', onLC);
@@ -4912,6 +5059,7 @@ async function adminMembers(box, t){
 
 /* ================= YÖNLENDİRME ================= */
 function route(){
+  if (liveLock && liveNow && liveNow.mode === 'live' && (location.hash.split('/')[1] || '') !== 'yarisma') { location.replace('#/yarisma'); return; }
   const t = ++token; runLiveCleanup();
   if (location.hash === '#kartlar') return;
   const parts = (location.hash.slice(1) || '/').split('/');
